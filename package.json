@@ -1,0 +1,14 @@
+{
+  "name": "early-careers-ui-kit-1",
+  "version": "1.0.0",
+  "repository": "git@github.com:AdaptiveConsulting/early-careers-ui-kit-1.git",
+  "author": "Early careers UI Kit team",
+  "license": "MIT",
+  "private": true,
+  "workspaces":["components", "docs", "theme"],
+  "scripts": {
+    "dev": "yarn workspace components run dev",
+    "build": "yarn workspace components run build",
+    "storybook": "yarn workspace docs run storybook"
+  }
+}
