@@ -1,0 +1,12 @@
+node_modules/
+
+# logs
+logs/
+
+#build files
+dist/
+dist-ssr/
+
+*.log
+yarn-debug.log*
+yarn-error.log*
