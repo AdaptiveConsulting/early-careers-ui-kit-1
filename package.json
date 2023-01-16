@@ -13,10 +13,17 @@
   "scripts": {
     "dev": "yarn workspace components run dev",
     "build": "yarn workspace components run build",
+<<<<<<< HEAD
     "storybook": "yarn workspace docs run storybook"
   },
   "engines": {
     "node": ">=18.0.0"
+=======
+    "storybook": "yarn workspace docs run storybook",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix",
+    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}'"
+>>>>>>> 4d0fc0d (Add first workflow of GH Actions)
   }
 
 }

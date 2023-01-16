@@ -1,10 +1,16 @@
+<<<<<<< HEAD
 import { defineConfig } from 'vitest/config'
 import react from '@vitejs/plugin-react'
 import {resolve} from 'path'
+=======
+import { defineConfig } from 'vitest/config';
+import react from '@vitejs/plugin-react';
+>>>>>>> 4d0fc0d (Add first workflow of GH Actions)
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
+<<<<<<< HEAD
   test:
     {
       /* for example, use global to avoid globals imports (describe, test, expect): */
@@ -20,3 +26,10 @@ export default defineConfig({
       }
     }
 })
+=======
+  test: {
+    /* for example, use global to avoid globals imports (describe, test, expect): */
+    globals: true
+  }
+});
+>>>>>>> 4d0fc0d (Add first workflow of GH Actions)
