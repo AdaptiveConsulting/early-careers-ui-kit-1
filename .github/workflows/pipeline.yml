@@ -2,14 +2,14 @@ name: Deployment Pipeline
 
 on:
   push:
-    branches: [ci-setup, main] 
+    branches: ["**"]
   pull_request:
-    branches: [main]
+    branches: ["**"]
     types: [opened, synchronize]
 
 jobs:
-  avoid_reduncy:
-    runs-on: ubuntu-20.04
+  avoid_redundancy:
+    runs-on: ubuntu-22.04
     steps:
     # Avoid redundant builds to prevent running more than 1 build in parallel
       - name: Cancel Previous Redundant Builds
@@ -18,7 +18,7 @@ jobs:
           access_token: ${{ github.token }}
 
   lint:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
     # Check-out code with GitHub Actions to allow workflow to access our repo
       - name: Checkout Code
@@ -26,6 +26,9 @@ jobs:
         with:
         # with: fetch-depth:0 means we are getting the last commit
           fetch-depth: 0
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18.13.0'
         
       - name: Install JS Dependencies
         run: yarn install
@@ -40,7 +43,7 @@ jobs:
         run: yarn run format
       
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
     # Check-out code with GitHub Actions to allow workflow to access our repo
       - name: Checkout Code
@@ -48,6 +51,9 @@ jobs:
         with:
         # with: fetch-depth:0 means we are getting the last commit
           fetch-depth: 0
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18.13.0'
         
       - name: Install JS Dependencies
         run: yarn install
@@ -65,7 +71,7 @@ jobs:
   # needs is an array to which we pass the jobs that need to be carried on before this job can be run. Tests need lint and build 
   # to be able to run correctly, otherwise test would run in parallel with build and crash.
     needs: [lint, build]
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
     # Check-out code with GitHub Actions to allow workflow to access our repo
       - name: Checkout Code
@@ -73,6 +79,9 @@ jobs:
         with:
         # with: fetch-depth:0 means we are getting the last commit
           fetch-depth: 0
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18.13.0'
         
       - name: Install JS Dependencies
         run: yarn install
