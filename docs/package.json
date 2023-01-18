@@ -1,4 +1,5 @@
 {
+  "homepage": "http://AdaptiveConsulting.github.io/early-careers-ui-kit-1",
   "name": "docs",
   "private": true,
   "version": "0.0.0",
@@ -7,10 +8,13 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "storybook": "start-storybook -p 6006",
+    "predeploy": "yarn build-storybook",
+    "storybook:deploy": "gh-pages -d storybook-static",
+    "storybook:build": "build-storybook"
   },
   "dependencies": {
+    "gh-pages": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "components": "0.0.1"
