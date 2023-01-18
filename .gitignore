@@ -2,14 +2,15 @@ node_modules/
 
 # logs
 logs/
-
-#build files
-dist/
-dist-ssr/
-
 *.log
 yarn-debug.log*
 yarn-error.log*
 
-# IDE
+#build files
+dist/
+
+.DS_Store
+*.local
+
+.vscode
 .idea
