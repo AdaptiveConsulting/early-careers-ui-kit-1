@@ -10,3 +10,6 @@ dist-ssr/
 *.log
 yarn-debug.log*
 yarn-error.log*
+
+# IDE
+.idea
