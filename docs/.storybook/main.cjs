@@ -12,11 +12,9 @@ module.exports = {
   },
   features: {
     storyStoreV7: true,
-    features: {
-      storyStoreV7: true,
-    },
     docs: {
       autodocs: true,
     },
   },
+  staticDirs: ['../storybook-static']
 }

@@ -3,6 +3,6 @@
 @tailwind utilities;
 
 .hello {
-    color: red;
-    background-color: deeppink;
+  color: red;
+  background-color: deeppink;
 }
