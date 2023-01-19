@@ -46,28 +46,28 @@ export const Button = ({
     if (buttonType === "secondary" && onLightBg) {
         base = "font-roboto text-[11px] rounded-full w-auto h-21px px-4 bg-transparent text-primary-dark outline outline-1 outline-offset--1 outline-primary-dark ";
         hover = "hover:bg-primary-dark hover:text-white hover:outline-none"
-        active = "active:bg-transparent active:text-primary-dark active:outline active:outline-1 active:outline-offset--1 active:outline-primary-dark active:ring-0 "
-        focus = "focus:ring-2 focus:ring-warning-main focus:ring-offset-2 "
+        active = "active:bg-transparent active:text-primary-dark active:outline active:outline-1 active:outline-offset--1 active:ring-offset-0 active:outline-primary-dark active:ring-0 "
+        focus = "focus:ring-2 focus:ring-warning-main focus:ring-offset-2 active:bg-transparent "
     }else if (buttonType === "secondary" && !onLightBg) {
         base = "font-roboto text-[11px] rounded-full w-auto h-21px px-4 bg-transparent text-primary-light outline outline-1 outline-offset--1 outline-primary-light ";
         hover = "hover:bg-primary-light hover:text-gray-800 "
-        active = "active:bg-transparent active:text-primary-dark active:outline active:outline-1 active:outline-offset--1 active:outline-primary-main active:ring-0 "
+        active = "active:bg-transparent active:text-primary-light active:outline active:outline-1 active:outline-offset--1 active:ring-offset-0 active:outline-primary-main active:ring-0 "
         focus = "focus:ring-2 focus:ring-warning-light focus:ring-offset-2 "
     }else if (buttonType === "tertiary" && onLightBg) {
         base = "font-roboto text-[11px] rounded-full w-auto h-21px px-4 bg-transparent text-primary-dark outline-none outline-offset-0 no-underline ";
         hover = "hover:underline "
-        active = "active:bg-transparent active:text-primary-dark active:outline active:outline-1 active:outline-offset--1 active:outline-primary-dark active:ring-0 active:no-underline "
+        active = "active:bg-transparent active:text-primary-dark active:outline active:outline-1 active:outline-offset--1 active:outline-primary-dark active:ring-0 active:ring-offset-0 active:no-underline "
         focus = "focus:ring-2 focus:ring-warning-main focus:ring-offset-2 focus:bg-transparent focus:text-primary-dark focus:outline focus:outline-1 focus:outline-offset--1 focus:outline-primary-dark focus:no-underline"
     }else if (buttonType === "tertiary" && !onLightBg) {
         base = "font-roboto text-[11px] rounded-full w-auto h-21px px-4 bg-transparent text-primary-light outline-none outline-offset-0 no-underline ";
         hover = "hover:underline "
-        active = "active:bg-transparent active:text-primary-light active:outline active:outline-1 active:outline-offset--1 active:outline-primary-light active:ring-0 active:no-underline "
+        active = "active:bg-transparent active:text-primary-light active:outline active:outline-1 active:outline-offset--1 active:outline-primary-light active:ring-0 active:ring-offset-0 active:no-underline "
         focus = "focus:ring-2 focus:ring-warning-main focus:ring-offset-2 focus:bg-transparent focus:text-primary-light focus:outline focus:outline-1 focus:outline-offset--1 focus:outline-primary-light focus:no-underline"
     }else{ //Primary
         base = "font-roboto text-[11px] rounded-full w-auto h-21px px-4 bg-primary-light text-black outline-none outline-offset-0 ";
         hover = "hover:bg-primary-main "
-        active = "active:outline-1 active:outline-offset--1 active:outline-primary-main active:bg-primary-light active:ring-0 "
-        focus = "focus:ring-2 focus:ring-warning-main focus:ring-offset-2 "
+        active = "active:outline-1 active:outline-offset--1 active:outline-primary-main active:bg-primary-light active:ring-0 active:ring-offset-0 "
+        focus = "focus:ring-2 focus:ring-warning-main focus:ring-offset-2 focus:ring-offset-parent"
     }
 
     return (
