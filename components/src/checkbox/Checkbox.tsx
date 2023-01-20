@@ -13,40 +13,29 @@ export const Checkbox = ({
   size,
   checkboxType,
   isDisabled,
-  text,
   isDarkTheme,
 }: CheckboxProps) => {
-  let base, accentColor
-  if (size === "small") {
-    base = "w-3 h-3"
-  } else if (size === "medium") {
-    base = "w-4 h-4"
-  }
-  if (checkboxType === "Primary" && isDarkTheme) {
-    accentColor = "accent-primary-dark"
-  } else if (checkboxType === "Primary" && !isDarkTheme) {
-    accentColor = "accent-primary-light"
-  }
+  let accentColor = "accent-primary-light"
+  const base = size === "small" ? "w-3 h-3" : "w-4 h-4"
 
-  if (checkboxType === "Secondary" && isDarkTheme) {
-    accentColor = "accent-secondary-dark"
-  } else if (checkboxType === "Secondary" && !isDarkTheme) {
-    accentColor = "accent-secondary-light"
-  }
-  if (checkboxType === "Error" && isDarkTheme) {
-    accentColor = "accent-error-dark"
-  } else if (checkboxType === "Error" && !isDarkTheme) {
-    accentColor = "accent-error-light"
-  }
-  if (checkboxType === "Success" && isDarkTheme) {
-    accentColor = "accent-success-dark"
-  } else if (checkboxType === "Success" && !isDarkTheme) {
-    accentColor = "accent-success-light"
-  }
-  if (checkboxType === "Warning" && isDarkTheme) {
-    accentColor = "accent-warning-dark"
-  } else if (checkboxType === "Warning" && !isDarkTheme) {
-    accentColor = "accent-warning-light"
+  switch (checkboxType) {
+    case "Primary":
+      accentColor = isDarkTheme ? "accent-primary-dark" : "accent-primary-light"
+      break
+    case "Secondary":
+      accentColor = isDarkTheme
+        ? "accent-secondary-dark"
+        : "accent-secondary-light"
+      break
+    case "Error":
+      accentColor = isDarkTheme ? "accent-error-dark" : "accent-error-light"
+      break
+    case "Success":
+      accentColor = isDarkTheme ? "accent-success-dark" : "accent-success-light"
+      break
+    case "Warning":
+      accentColor = isDarkTheme ? "accent-warning-dark" : "accent-warning-light"
+      break
   }
 
   const disabled = isDisabled ? true : false
