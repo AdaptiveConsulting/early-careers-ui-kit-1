@@ -1,57 +1,60 @@
-import React from 'react';
-import './checkbox.css';
-
+import React from "react"
+import "./checkbox.css"
+import { useEffect } from "react"
+import { isDepsOptimizerEnabled } from "vite"
 interface CheckboxProps {
-    // /**
-    //  * on light or on dark background?
-    //  */
-    // onLightBg? : boolean;
-    // /**
-    //  * Type of button?
-    //  */
-    // buttonType?: string;
-    // // /**
-    // //  * Is this the principal call to action on the page?
-    // //  */
-    // // primary?: boolean;
-    // /**
-    //  * What background color to use
-    //  */
-    // backgroundColor?: string;
-    // // /**
-    // //  * How large should the button be?
-    // //  */
-    // // size?: 'small' | 'medium' | 'large';
-    // /**
-    //  * Button contents
-    //  */
-    // label: string;
-    // /**
-    //  * Optional click handler
-    //  */
-    // onClick?: () => void;
+  size?: "small" | "medium"
+  checkboxType: string
+  isDisabled: boolean
+  text: string
+  isDarkTheme: boolean
 }
-
-/**
- * Primary UI component for user interaction
- */
 export const Checkbox = ({
-        // buttonType,
-        // onLightBg,
-        // backgroundColor,
-        // label,
-        // ...props
-   }: CheckboxProps) => {
+  size,
+  checkboxType,
+  isDisabled,
+  text,
+  isDarkTheme,
+}: CheckboxProps) => {
+  let base, accentColor
+  if (size === "small") {
+    base = "w-3 h-3"
+  } else if (size === "medium") {
+    base = "w-4 h-4"
+  }
+  if (checkboxType === "Primary" && isDarkTheme) {
+    accentColor = "accent-primary-dark"
+  } else if (checkboxType === "Primary" && !isDarkTheme) {
+    accentColor = "accent-primary-light"
+  }
 
-    return (
-        <a>Hello</a>
-        // <button
-        //     type="button"
-        //     className={base + hover + active + focus}
-        //     style={{ backgroundColor }}
-        //     {...props}
-        // >
-        //     {label}
-        // </button>
-    );
-};
+  if (checkboxType === "Secondary" && isDarkTheme) {
+    accentColor = "accent-secondary-dark"
+  } else if (checkboxType === "Secondary" && !isDarkTheme) {
+    accentColor = "accent-secondary-light"
+  }
+  if (checkboxType === "Error" && isDarkTheme) {
+    accentColor = "accent-error-dark"
+  } else if (checkboxType === "Error" && !isDarkTheme) {
+    accentColor = "accent-error-light"
+  }
+  if (checkboxType === "Success" && isDarkTheme) {
+    accentColor = "accent-success-dark"
+  } else if (checkboxType === "Success" && !isDarkTheme) {
+    accentColor = "accent-success-light"
+  }
+  if (checkboxType === "Warning" && isDarkTheme) {
+    accentColor = "accent-warning-dark"
+  } else if (checkboxType === "Warning" && !isDarkTheme) {
+    accentColor = "accent-warning-light"
+  }
+
+  const disabled = isDisabled ? true : false
+  return (
+    <input
+      type="checkbox"
+      disabled={disabled}
+      className={`${accentColor} ${base}`}
+    ></input>
+  )
+}
