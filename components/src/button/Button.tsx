@@ -1,35 +1,35 @@
-import React from 'react';
-import './button.css';
+import React from "react"
+import "./button.css"
 
 interface ButtonProps {
-    /**
-     * on light or on dark background?
-     */
-    onLightBg? : boolean;
-    /**
-     * Type of button?
-     */
-    buttonType?: string;
-    // /**
-    //  * Is this the principal call to action on the page?
-    //  */
-    // primary?: boolean;
-    /**
-     * What background color to use
-     */
-    backgroundColor?: string;
-    // /**
-    //  * How large should the button be?
-    //  */
-    // size?: 'small' | 'medium' | 'large';
-    /**
-     * Button contents
-     */
-    label: string;
-    /**
-     * Optional click handler
-     */
-    onClick?: () => void;
+  /**
+   * on light or on dark background?
+   */
+  onLightBg?: boolean
+  /**
+   * Type of button?
+   */
+  buttonType?: string
+  // /**
+  //  * Is this the principal call to action on the page?
+  //  */
+  // primary?: boolean;
+  /**
+   * What background color to use
+   */
+  backgroundColor?: string
+  // /**
+  //  * How large should the button be?
+  //  */
+  // size?: 'small' | 'medium' | 'large';
+  /**
+   * Button contents
+   */
+  label: string
+  /**
+   * Optional click handler
+   */
+  onClick?: () => void
 }
 
 /**
@@ -70,14 +70,14 @@ export const Button = ({
         focus = "focus:ring-2 focus:ring-warning-main focus:ring-offset-2 focus:ring-offset-parent"
     }
 
-    return (
-        <button
-            type="button"
-            className={base + hover + active + focus}
-            style={{ backgroundColor }}
-            {...props}
-        >
-            {label}
-        </button>
-    );
-};
+  return (
+    <button
+      type="button"
+      className={base + hover + active + focus}
+      style={{ backgroundColor }}
+      {...props}
+    >
+      {label}
+    </button>
+  )
+}

@@ -1,0 +1,29 @@
+name: CI Setup
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: ["**"]
+    types: [opened, synchronize]
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+    # Check-out code with GitHub Actions to allow workflow to access our repo
+      - name: Checkout Code
+        uses: actions/checkout@v3
+        with:
+        # with: fetch-depth:0 means we are getting the last commit
+          fetch-depth: 0
+        
+      - name: Install JS Dependencies
+        run: yarn install
+
+      - name: Run checks
+        run: yarn verify
+
+      - name: Build
+        run: yarn build
+
