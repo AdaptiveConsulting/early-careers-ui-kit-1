@@ -2,10 +2,10 @@ import React from "react"
 import "./checkbox.css"
 interface CheckboxProps {
   size?: "small" | "medium"
-  checkboxType: string
-  isDisabled: boolean
-  text: string
-  isDarkTheme: boolean
+  checkboxType?: string
+  isDisabled?: boolean
+  text?: string
+  isDarkTheme?: boolean
 }
 export const Checkbox = ({
   size,
