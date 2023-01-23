@@ -1,7 +1,5 @@
 import React from "react"
 import "./checkbox.css"
-import { useEffect } from "react"
-import { isDepsOptimizerEnabled } from "vite"
 interface CheckboxProps {
   size?: "small" | "medium"
   checkboxType: string
