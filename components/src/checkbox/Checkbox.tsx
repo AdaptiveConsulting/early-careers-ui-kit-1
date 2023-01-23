@@ -42,6 +42,6 @@ export const Checkbox = ({
       type="checkbox"
       disabled={disabled}
       className={`${accentColor} ${base}`}
-    ></input>
+    />
   )
 }
