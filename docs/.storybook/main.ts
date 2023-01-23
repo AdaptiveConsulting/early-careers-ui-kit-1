@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: [
     "@storybook/addon-links",
@@ -8,13 +8,11 @@ module.exports = {
   framework: {
     name: "@storybook/react-vite",
     options: {},
-    options: {},
   },
   features: {
     storyStoreV7: true,
-    docs: {
-      autodocs: true,
-    },
   },
-  staticDirs: ['../storybook-static']
+  docs: {
+    autodocs: true,
+  },
 }

@@ -19,7 +19,8 @@
     "lint:fix": "eslint --fix",
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}'",
     "format:check": "yarn run format -- --check",
-    "verify": "yarn lint && yarn format:check && yarn test"
+    "verify": "yarn lint && yarn format:check && yarn test",
+    "storybook:build": "yarn workspace docs storybook:build"
   },
   "engines": {
     "node": ">=16"
