@@ -11,11 +11,19 @@
     "theme"
   ],
   "scripts": {
+    "test": "yarn workspace components run test",
     "dev": "yarn workspace components run dev",
     "build": "yarn workspace components run build",
-    "storybook": "yarn workspace docs run storybook"
+    "storybook": "yarn workspace docs run storybook",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix",
+    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}'",
+    "format:check": "yarn run format -- --check",
+    "verify": "yarn lint && yarn format:check && yarn test",
+    "storybook:build": "yarn workspace docs storybook:build"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=16"
   }
 }
+
