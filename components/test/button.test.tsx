@@ -25,7 +25,7 @@ test("Secondary Button On Light Background", () => {
   const tree = toJson(component)
 
   expect(tree.props.className).toBe(
-    "font-roboto text-[11px] rounded-full w-auto h-21px px-4 bg-transparent text-primary-dark outline outline-1 outline-offset--1 outline-primary-dark hover:bg-primary-dark hover:text-white hover:outline-none active:bg-transparent active:outline active:outline-1 active:-outline-offset-1 active:ring-offset-0 active:ring-0 active:outline-primary-dark active:text-primary-dark focus:ring-warning-main focus:ring-2 focus:ring-offset-2 active:bg-transparent ",
+    "font-roboto text-[11px] rounded-full w-auto h-21px px-4 bg-transparent text-primary-dark outline outline-1 outline-offset--1 outline-primary-dark hover:bg-primary-dark hover:text-common-white hover:outline-none active:bg-transparent active:outline active:outline-1 active:-outline-offset-1 active:ring-offset-0 active:ring-0 active:outline-primary-dark active:text-primary-dark focus:ring-warning-main focus:ring-2 focus:ring-offset-2 active:bg-transparent ",
   )
 })
 
@@ -47,7 +47,7 @@ test("Tertiary Button On Light Background", () => {
   const tree = toJson(component)
 
   expect(tree.props.className).toBe(
-    "font-roboto text-[11px] rounded-full w-auto h-21px px-4 text-primary-dark bg-transparent outline-none outline-offset-0 no-underline hover:underline active:text-primary-dark active:outline-primary-dark active:bg-transparent active:outline active:outline-1 active:outline-offset--1 active:ring-0 active:ring-offset-0 active:no-underline focus:ring-warning-main focus:outline-primary-dark focus:text-primary-dark focus:ring-2 focus:ring-offset-2 focus:bg-transparent focus:outline focus:outline-1 focus:outline-offset--1 focus:no-underline",
+    "font-roboto text-[11px] rounded-full w-auto h-21px px-4 text-primary-dark bg-transparent outline-offset-0 no-underline hover:underline active:text-primary-dark active:outline-primary-dark active:bg-transparent active:outline active:outline-1 active:outline-offset--1 active:ring-0 active:ring-offset-0 active:no-underline focus:ring-warning-main focus:outline-primary-dark focus:text-primary-dark focus:ring-2 focus:ring-offset-2 focus:bg-transparent focus:outline focus:outline-1 focus:-outline-offset-1 focus:no-underline",
   )
 })
 
@@ -55,9 +55,10 @@ test("Tertiary Button On Dark Background", () => {
   const component = renderer.create(
     <Button label="BUTTON TEXT" variant="tertiary" onLightBg={false} />,
   )
+
   const tree = toJson(component)
 
   expect(tree.props.className).toBe(
-    "font-roboto text-[11px] rounded-full w-auto h-21px px-4 text-primary-light bg-transparent outline-none outline-offset-0 no-underline hover:underline active:text-primary-light active:outline-primary-light active:bg-transparent active:outline active:outline-1 active:outline-offset--1 active:ring-0 active:ring-offset-0 active:no-underline focus:ring-warning-light focus:outline-primary-light focus:text-primary-light focus:ring-2 focus:ring-offset-2 focus:bg-transparent focus:outline focus:outline-1 focus:outline-offset--1 focus:no-underline",
+    "font-roboto text-[11px] rounded-full w-auto h-21px px-4 text-primary-light bg-transparent outline-offset-0 no-underline hover:underline active:text-primary-light active:outline-primary-light active:bg-transparent active:outline active:outline-1 active:outline-offset--1 active:ring-0 active:ring-offset-0 active:no-underline focus:ring-warning-light focus:outline-primary-light focus:text-primary-light focus:ring-2 focus:ring-offset-2 focus:bg-transparent focus:outline focus:outline-1 focus:-outline-offset-1 focus:no-underline",
   )
 })
