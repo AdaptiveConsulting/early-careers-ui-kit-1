@@ -2483,6 +2483,18 @@ address@^1.0.1:
   resolved "https://registry.yarnpkg.com/address/-/address-1.2.2.tgz#2b5248dac5485a6390532c6a517fda2e3faac89e"
   integrity sha512-4B/qKCfeE/ODUaAUpSwfzazo5x29WD4r3vXiWsB7I2mSDAihwEqKO+g8GELZUQSSAo5e1XTYh3ZVfLyxBc12nA==
 
+ag-grid-community@^29.0.0:
+  version "29.0.0"
+  resolved "https://registry.yarnpkg.com/ag-grid-community/-/ag-grid-community-29.0.0.tgz#33c8de7b253af15986c343f6d6fd098f3e6d681b"
+  integrity sha512-onAQIqjhP1L93W5myAsfLBMBUyZPrWDb8FRulJuhjQKo8DEA4GSZ+oJHxwwLymm4biLu54zvZ+9GkTftha8gAg==
+
+ag-grid-react@^29.0.0:
+  version "29.0.0"
+  resolved "https://registry.yarnpkg.com/ag-grid-react/-/ag-grid-react-29.0.0.tgz#c26bd13a19993059e66cbbc8e262e9837a9cb4bc"
+  integrity sha512-R8rE6fXXzl1SocGhfQGkfdGWUN0KmYOCVwyn4ZPNu0Ofsxb7/KZd0RwuetvH1J8hSlHmSsoou6qzalPbSC4jLQ==
+  dependencies:
+    prop-types "^15.8.1"
+
 agent-base@5:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/agent-base/-/agent-base-5.1.1.tgz#e8fb3f242959db44d63be665db7a8e739537a32c"
