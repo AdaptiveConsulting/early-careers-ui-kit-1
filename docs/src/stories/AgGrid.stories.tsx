@@ -1,4 +1,4 @@
-import AgGrid from "components/src/agGrid/AgGrid"
+import { AgGrid } from "components/src"
 import { GridType, fooData } from "components/src/"
 import { StoryFn, Meta } from "@storybook/react"
 import Car from "components/src/assets/sedan.png"
