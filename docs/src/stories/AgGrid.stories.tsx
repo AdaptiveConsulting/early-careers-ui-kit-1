@@ -1,6 +1,6 @@
 import AgGrid from "components/src/agGrid/AgGrid"
-import { StoryFn, Meta } from "@storybook/react"
 import { GridType, fooData } from "components/src/"
+import { StoryFn, Meta } from "@storybook/react"
 import Car from "components/src/assets/sedan.png"
 import Jeep from "components/src/assets/jeep.png"
 import Van from "components/src/assets/van.png"
@@ -21,7 +21,7 @@ export default {
   argTypes: {},
 } as Meta<typeof AgGrid>
 
-const Template: StoryFn<typeof AgGrid> = (args) => <AgGrid {...args} />
+const Template: StoryFn<typeof AgGrid> = (args: any) => <AgGrid {...args} />
 
 // Override the default with data
 export const Primary = Template.bind({})
