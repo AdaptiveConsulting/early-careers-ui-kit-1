@@ -31,41 +31,34 @@ export const Button = ({
   ...props
 }: ButtonProps) => {
   let base, hover, active, focus
-  const baseDefault = "font-roboto text-[11px] rounded-full w-auto h-21px px-4"
+  const focusColor = onLightBg
+    ? "focus:ring-warning-main"
+    : "focus:ring-warning-light"
+  const mainColour = onLightBg ? "primary-dark" : "primary-light"
 
   if (variant === "secondary") {
-    const borderColor = onLightBg
-      ? "outline-primary-dark"
-      : "outline-primary-light"
-    const hoverBgColor = onLightBg
-      ? "hover:bg-primary-dark"
-      : "hover:bg-primary-light"
-    const hoverTextColor = onLightBg
-      ? "hover:text-common-white"
-      : "hover:text-gray-800"
-    const activeBorderColor = onLightBg
-      ? "active:outline-primary-dark"
-      : "active:outline-primary-main"
-    const textColor = onLightBg ? "primary-dark" : "primary-light"
-    const focusColor = onLightBg
-      ? "focus:ring-warning-main"
-      : "focus:ring-warning-light"
-    base = `${baseDefault} bg-transparent text-${textColor} outline outline-1 outline-offset--1 ${borderColor} `
-    hover = `${hoverBgColor} ${hoverTextColor}` + " hover:outline-none "
-    active = `active:bg-transparent active:outline active:outline-1 active:-outline-offset-1 active:ring-offset-0 active:ring-0 ${activeBorderColor} active:text-${textColor} `
-    focus = `${focusColor} focus:ring-2 focus:ring-offset-2 active:bg-transparent `
+    const baseChanges = onLightBg
+      ? "text-primary-dark outline-primary-dark"
+      : "text-primary-light outline-primary-light"
+    const hoverChanges = onLightBg
+      ? "hover:bg-primary-dark hover:text-common-white"
+      : "hover:bg-primary-light hover:text-gray-800"
+    const activeChanges = onLightBg
+      ? "active:outline-primary-dark active:text-primary-dark"
+      : "active:outline-primary-main active:text-primary-light"
+
+    base = `btn-base btn-secondary ${baseChanges} `
+    hover = `hover:outline-none ${hoverChanges} `
+    active = `active:bg-transparent active:outline active:outline-1 active:-outline-offset-1 active:ring-offset-0 active:ring-0 ${activeChanges} `
+    focus = `focus:ring-2 focus:ring-offset-2 active:bg-transparent ${focusColor} `
   } else if (variant === "tertiary") {
-    const mainColour = onLightBg ? "primary-dark" : "primary-light"
-    const focusColor = onLightBg
-      ? "focus:ring-warning-main"
-      : "focus:ring-warning-light"
-    base = `${baseDefault} text-${mainColour} bg-transparent outline-offset-0 no-underline `
+    base = `btn-base btn-tertiary text-${mainColour} `
     hover = "hover:underline "
     active = `active:text-${mainColour} active:outline-${mainColour} active:bg-transparent active:outline active:outline-1 active:outline-offset--1 active:ring-0 active:ring-offset-0 active:no-underline `
     focus = `${focusColor} focus:outline-${mainColour} focus:text-${mainColour} focus:ring-2 focus:ring-offset-2 focus:bg-transparent focus:outline focus:outline-1 focus:-outline-offset-1 focus:no-underline`
   } else {
     //Primary
-    base = `${baseDefault} bg-primary-light text-black outline-none outline-offset-0 `
+    base = `btn-base bg-primary-light text-black outline-none outline-offset-0 `
     hover = "hover:bg-primary-main "
     active =
       "active:outline-1 active:outline-offset--1 active:outline-primary-main active:bg-primary-light active:ring-0 active:ring-offset-0 "
