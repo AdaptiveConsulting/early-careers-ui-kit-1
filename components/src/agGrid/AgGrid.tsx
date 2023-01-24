@@ -3,6 +3,7 @@ import { AgGridReact } from "ag-grid-react"
 import "ag-grid-community/styles/ag-grid.css"
 import "ag-grid-community/styles/ag-theme-alpine.css"
 import { GridType } from "./AgGridTypes"
+import "./AgGrid.css"
 
 export default function AgGrid({
   isDark,
@@ -25,7 +26,7 @@ export default function AgGrid({
   )
 
   return (
-    <div style={{ height: 400, width: 850 }}>
+    <div className={"w-[850px] h-[400px]"}>
       <AgGridReact
         className={`${isDark ? "ag-theme-alpine-dark" : "ag-theme-alpine"}`}
         rowData={rowData}

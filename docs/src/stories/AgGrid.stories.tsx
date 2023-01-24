@@ -71,7 +71,7 @@ LotsOfData.args = {
 
 // colour style dependent on the value of the car
 const carPrice = (value: number) => {
-  return { backgroundColor: value > 50000 ? "#FF5733" : "#00E676" }
+  return { color: value > 50000 ? "#FF5733" : "#00E676" }
 }
 
 // this will render the cell to pick out the corresponsing image to the "type" cell
@@ -80,7 +80,7 @@ const carType = (value: string) => {
     <img
       alt=""
       src={value === "sedan" ? Car : value === "jeep" ? Jeep : Van}
-      style={{ width: "30px", height: "30px" }}
+      className={"w-[35px] h-[35px]"}
     />
   )
 }
