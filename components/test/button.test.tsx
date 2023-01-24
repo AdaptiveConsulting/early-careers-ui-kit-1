@@ -62,3 +62,11 @@ test("Tertiary Button On Dark Background", () => {
     "btn-base btn-tertiary text-primary-light hover:underline active:text-primary-light active:outline-primary-light active:bg-transparent active:outline active:outline-1 active:outline-offset-[-1] active:ring-0 active:ring-offset-0 active:no-underline focus:ring-warning-light focus:outline-primary-light focus:text-primary-light focus:ring-2 focus:ring-offset-2 focus:bg-transparent focus:outline focus:outline-1 focus:outline-offset-[-1] focus:no-underline",
   )
 })
+
+test("Disabled", () => {
+  const component = renderer.create(<Button label="BUTTON TEXT" disabled />)
+
+  const tree = toJson(component)
+
+  expect(tree.props.className).toBe("btn-base bg-grey-200 text-grey-500")
+})

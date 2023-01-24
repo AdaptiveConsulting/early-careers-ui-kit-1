@@ -11,6 +11,10 @@ interface ButtonProps {
    */
   onLightBg?: boolean
   /**
+   * is button disabled?
+   */
+  disabled?: boolean
+  /**
    * What background color to use
    */
   backgroundColor?: string
@@ -28,15 +32,18 @@ export const Button = ({
   onLightBg,
   backgroundColor,
   label,
+  disabled,
   ...props
 }: ButtonProps) => {
-  let base, hover, active, focus
+  let [base, hover, active, focus] = ["", "", "", ""]
   const focusColor = onLightBg
     ? "focus:ring-warning-main"
     : "focus:ring-warning-light"
   const mainColour = onLightBg ? "primary-dark" : "primary-light"
 
-  if (variant === "secondary") {
+  if (disabled) {
+    base = `btn-base bg-grey-200 text-grey-500`
+  } else if (variant === "secondary") {
     const baseChanges = onLightBg
       ? "text-primary-dark outline-primary-dark"
       : "text-primary-light outline-primary-light"
@@ -68,6 +75,7 @@ export const Button = ({
 
   return (
     <button
+      disabled={disabled}
       type="button"
       className={base + hover + active + focus}
       style={{ backgroundColor }}
