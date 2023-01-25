@@ -3,6 +3,9 @@ module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        roboto: ["Roboto", "sans-serif"],
+      },
       colors: {
         common: {
           black: "#000",
@@ -63,15 +66,15 @@ module.exports = {
           main: "#FF274B",
           light: "#FF6877",
         },
-        white: {
-          primary: "rgba(255, 255, 255, 0.95)",
-          secondary: "rgba(255, 255, 255, 0.83)",
-          disabled: "rgba(255, 255, 255, 0.38)",
+        "opacity-white": {
+          95: "rgba(255, 255, 255, 0.95)",
+          83: "rgba(255, 255, 255, 0.83)",
+          38: "rgba(255, 255, 255, 0.38)",
         },
-        black: {
-          primary: "rgba(0, 0, 0, 0.95)",
-          secondary: "rgba(0, 0, 0, 0.83)",
-          disabled: "rgba(0, 0, 0, 0.38)",
+        "opacity-black": {
+          95: "rgba(0, 0, 0, 0.95)",
+          83: "rgba(0, 0, 0, 0.83)",
+          38: "rgba(0, 0, 0, 0.38)",
         },
       },
     },
