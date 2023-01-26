@@ -1,4 +1,4 @@
-name: CI Setup 
+name: CI Setup
 
 on:
   push:
