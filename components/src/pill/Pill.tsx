@@ -33,13 +33,15 @@ export const Pill = ({ purpose, onLightBg, isDisabled, type, text }: PillType) =
     typeFilter()
   } else if (purpose === "primary") {
     style = "rounded-xl px-2 py-1 text-left text-sm font-medium "
+    if (!isDisabled) {
+      style += onLightBg ? "bg-primary-main hover:bg-primary-light hover:outline-none hover:border-none " : "bg-transparent ticker-pill"
+    }
     if (isDisabled && onLightBg) {
       style += "primary-pill bg-primary-light"
     }
     if (isDisabled && !onLightBg) {
       style += "primary-pill bg-transparent"
     }
-    style += onLightBg ? "bg-primary-main hover:bg-primary-light hover:outline-none hover:border-none " : "bg-transparent ticker-pill"
   } else if (purpose === "ticker") {
     style = "w-16 bg-transparent rounded-xl px-2 py-1 text-sm font-medium ticker-pill"
   }

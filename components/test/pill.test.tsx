@@ -15,7 +15,7 @@ test("Status Success Pill DarkMode", () => {
   const tree = toJson(component)
 
   expect(tree.props.className).toBe(
-    "rounded-xl px-2 py-1 text-left text-sm font-medium pointer-events-none border-none bg-transparent text-common-white outline outline-2 outline-success-dark"
+    "rounded-xl px-2 py-1 text-left text-sm font-medium pointer-events-none status-pill-dark outline-success-dark"
   )
 })
 test("Status Success Pill LightMode", () => {
@@ -32,7 +32,7 @@ test("Status Warning Pill DarkMode", () => {
   const tree = toJson(component)
 
   expect(tree.props.className).toBe(
-    "rounded-xl px-2 py-1 text-left text-sm font-medium pointer-events-none border-none bg-transparent text-common-white outline outline-2 outline-warning-dark"
+    "rounded-xl px-2 py-1 text-left text-sm font-medium pointer-events-none status-pill-dark outline-warning-dark"
   )
 })
 test("Status Warning Pill LightMode", () => {
@@ -49,7 +49,7 @@ test("Status Buy Pill DarkMode", () => {
   const tree = toJson(component)
 
   expect(tree.props.className).toBe(
-    "rounded-xl px-2 py-1 text-left text-sm font-medium pointer-events-none border-none bg-transparent text-common-white outline outline-2 outline-buy-dark"
+    "rounded-xl px-2 py-1 text-left text-sm font-medium pointer-events-none status-pill-dark outline-buy-dark"
   )
 })
 test("Status Buy Pill LightMode", () => {
@@ -66,7 +66,7 @@ test("Status Sell Pill DarkMode", () => {
   const tree = toJson(component)
 
   expect(tree.props.className).toBe(
-    "rounded-xl px-2 py-1 text-left text-sm font-medium pointer-events-none border-none bg-transparent text-common-white outline outline-2 outline-sell-dark"
+    "rounded-xl px-2 py-1 text-left text-sm font-medium pointer-events-none status-pill-dark outline-sell-dark"
   )
 })
 test("Status Sell Pill LightMode", () => {
@@ -83,7 +83,7 @@ test("Status Primary Pill LightMode", () => {
   const tree = toJson(component)
 
   expect(tree.props.className).toBe(
-    "rounded-xl px-2 py-1 text-left text-sm font-medium bg-primary-main hover:bg-primary-light hover:outline-none hover:border-none focus:ring-2 focus:ring-warning-main focus:ring-offset-2 focus:border-primary-light focus:outline-none focus:border-none active:outline active:outline-1 active:outline-offset--1 active:outline-primary-light active:ring-0 "
+    "rounded-xl px-2 py-1 text-left text-sm font-medium bg-primary-main hover:bg-primary-light hover:outline-none hover:border-none "
   )
 })
 test("Status Primary Pill LightMode disabled", () => {
@@ -91,7 +91,7 @@ test("Status Primary Pill LightMode disabled", () => {
   const tree = toJson(component)
 
   expect(tree.props.className).toBe(
-    "rounded-xl px-2 py-1 text-left text-sm font-medium bg-primary-main hover:bg-primary-light hover:outline-none hover:border-none focus:ring-2 focus:ring-warning-main focus:ring-offset-2 focus:border-primary-light focus:outline-none focus:border-none active:outline active:outline-1 active:outline-offset--1 active:outline-primary-light active:ring-0 bg-primary-light pointer-events-none opacity-60"
+    "rounded-xl px-2 py-1 text-left text-sm font-medium primary-pill bg-primary-light"
   )
 })
 
@@ -100,7 +100,7 @@ test("Status Primary Pill DarkMode", () => {
   const tree = toJson(component)
 
   expect(tree.props.className).toBe(
-    "rounded-xl px-2 py-1 text-left text-sm font-medium bg-transparent text-primary-main border-2 border-primary-main hover:border-primary-light hover:text-primary-light focus:ring-2 focus:ring-warning-main focus:ring-offset-2 focus:border-primary-light focus:outline-none focus:border-none active:outline active:outline-1 active:outline-offset--1 active:outline-primary-light active:ring-0 "
+    "rounded-xl px-2 py-1 text-left text-sm font-medium bg-transparent ticker-pill"
   )
 })
 test("Status Primary Pill DarkMode disabled", () => {
@@ -108,7 +108,7 @@ test("Status Primary Pill DarkMode disabled", () => {
   const tree = toJson(component)
 
   expect(tree.props.className).toBe(
-    "rounded-xl px-2 py-1 text-left text-sm font-medium bg-transparent text-primary-main border-2 border-primary-main hover:border-primary-light hover:text-primary-light focus:ring-2 focus:ring-warning-main focus:ring-offset-2 focus:border-primary-light focus:outline-none focus:border-none active:outline active:outline-1 active:outline-offset--1 active:outline-primary-light active:ring-0 bg-transparent pointer-events-none opacity-60"
+    "rounded-xl px-2 py-1 text-left text-sm font-medium primary-pill bg-transparent"
   )
 })
 
@@ -117,6 +117,6 @@ test("Status Ticker Pill", () => {
   const tree = toJson(component)
 
   expect(tree.props.className).toBe(
-    "w-16 bg-transparent rounded-xl px-2 py-1 text-sm font-medium text-primary-main border-2 border-primary-main hover:border-primary-light hover:text-primary-light"
+    "w-16 bg-transparent rounded-xl px-2 py-1 text-sm font-medium ticker-pill"
   )
 })

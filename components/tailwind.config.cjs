@@ -56,12 +56,12 @@ module.exports = {
           main: "#01C38D",
           light: "#5DF7BD",
         },
-        sell: {
+        buy: {
           dark: "#005195",
           main: "#2D96FF",
           light: "#76C6FF",
         },
-        buy: {
+        sell: {
           dark: "#B60017",
           main: "#FF274B",
           light: "#FF6877",
