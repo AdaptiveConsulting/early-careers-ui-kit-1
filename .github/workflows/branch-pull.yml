@@ -1,4 +1,4 @@
-name: CI Setup 
+name: CI Setup
 
 on:
   push:
@@ -26,5 +26,11 @@ jobs:
 
       - name: Build
         run: yarn build
+
+      # - name: Install Playwright Browsers
+      #   run: npx playwright install --with-deps
+
+      - name: Playwright Test
+        run: yarn playwright:test
 
 

@@ -1,4 +1,4 @@
-import { defineConfig } from "vitest/config"
+import { configDefaults, defineConfig } from "vitest/config"
 import react from "@vitejs/plugin-react"
 import { resolve } from "path"
 import tailwindcss from "tailwindcss"
@@ -10,6 +10,7 @@ export default defineConfig({
   test: {
     /* for example, use global to avoid globals imports (describe, test, expect): */
     globals: true,
+    exclude: [...configDefaults.exclude, "**/e2e/**", "**/tests-examples/**"],
   },
   build: {
     lib: {
