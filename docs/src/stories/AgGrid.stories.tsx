@@ -16,12 +16,12 @@ const defaultArgs: GridType = {
 }
 
 export default {
-  title: "AgGrid/table",
+  title: "AgGrid/Table",
   component: AgGrid,
   argTypes: {},
 } as Meta<typeof AgGrid>
 
-const Template: StoryFn<typeof AgGrid> = (args: any) => <AgGrid {...args} />
+const Template: StoryFn<typeof AgGrid> = (args) => <AgGrid {...args} />
 
 // Override the default with data
 export const Primary = Template.bind({})
