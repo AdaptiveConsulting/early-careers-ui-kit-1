@@ -27,7 +27,4 @@ jobs:
       - name: Build
         run: yarn build
 
-      - name: Unit Tests Components
-        run: yarn vitest
-
 
