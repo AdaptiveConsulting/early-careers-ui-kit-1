@@ -2,7 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-.hello {
-  color: red;
-  background-color: deeppink;
+@layer components {
+  .btn-base {
+    @apply font-roboto text-[11px] rounded-full w-auto h-[21px] px-4;
+  }
+
+  .btn-secondary {
+    @apply btn-base bg-transparent outline outline-1 -outline-offset-1;
+  }
+
+  .btn-tertiary {
+    @apply bg-transparent outline-offset-0 no-underline;
+  }
 }

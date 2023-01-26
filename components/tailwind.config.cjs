@@ -2,10 +2,10 @@
 module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    fontFamily: {
-      roboto: ["Roboto", "sans-serif"],
-    },
     extend: {
+      fontFamily: {
+        roboto: ["Roboto", "sans-serif"],
+      },
       colors: {
         common: {
           black: "#000",
@@ -21,7 +21,7 @@ module.exports = {
           200: "#E4E4E4",
           300: "#CFCFCF",
           400: "#BBB",
-          500: "#7f7f7f",
+          500: "#7F7F7F",
           600: "#6B6B6B",
           700: "#555555",
           800: "#4D4D4D",
@@ -66,15 +66,15 @@ module.exports = {
           main: "#FF274B",
           light: "#FF6877",
         },
-        white: {
-          primary: "rgba(255, 255, 255, 0.95)",
-          secondary: "rgba(255, 255, 255, 0.83)",
-          disabled: "rgba(255, 255, 255, 0.38)",
+        "opacity-white": {
+          95: "rgba(255, 255, 255, 0.95)",
+          83: "rgba(255, 255, 255, 0.83)",
+          38: "rgba(255, 255, 255, 0.38)",
         },
-        black: {
-          primary: "rgba(0, 0, 0, 0.95)",
-          secondary: "rgba(0, 0, 0, 0.83)",
-          disabled: "rgba(0, 0, 0, 0.38)",
+        "opacity-black": {
+          95: "rgba(0, 0, 0, 0.95)",
+          83: "rgba(0, 0, 0, 0.83)",
+          38: "rgba(0, 0, 0, 0.38)",
         },
       },
     },
