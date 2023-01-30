@@ -21,9 +21,6 @@ jobs:
       - name: Install JS Dependencies
         run: yarn install
 
-      - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
-
       - name: Run checks
         run: yarn verify
 
