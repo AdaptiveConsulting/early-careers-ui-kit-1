@@ -1,10 +1,19 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  // https://stackoverflow.com/questions/67289894/jit-tailwindcss-using-variable-in-bg-not-rendering-color
+  // https://tailwindcss.com/docs/content-configuration#safelisting-classes
+  safelist: [
+    {
+      pattern:
+        /(bg|text)-(common|paper|grey|primary|secondary|error|warning|success|buy|sell|opacity-white|opacity-black)-(black|white|50|100|200|300|400|500|600|700|800|900|a100|a200|a400|a700|dark|main|light|95|83|38)/,
+    },
+  ],
   theme: {
     extend: {
       fontFamily: {
         roboto: ["Roboto", "sans-serif"],
+        merriweather: ["Merriweather", "sans-serif"],
       },
       colors: {
         common: {
