@@ -5,7 +5,7 @@ import { Checkbox } from "components"
 import "components/dist/style.css"
 
 export default {
-  title: "Example/Checkbox",
+  title: "Components/Checkbox",
   component: Checkbox,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
