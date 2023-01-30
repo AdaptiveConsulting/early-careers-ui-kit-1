@@ -30,4 +30,3 @@ jobs:
       - name: Playwright Test
         run: yarn e2e:web
 
-
