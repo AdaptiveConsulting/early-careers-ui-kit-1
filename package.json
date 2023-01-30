@@ -12,6 +12,7 @@
   ],
   "scripts": {
     "test": "yarn workspace components run test",
+    "e2e:web": "yarn workspace components run e2e:web",
     "dev": "yarn workspace components run dev",
     "build": "yarn workspace components run build",
     "storybook": "yarn workspace docs run storybook",

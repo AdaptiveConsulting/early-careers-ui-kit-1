@@ -27,4 +27,6 @@ jobs:
       - name: Build
         run: yarn build
 
+      - name: Playwright Test
+        run: yarn e2e:web
 
