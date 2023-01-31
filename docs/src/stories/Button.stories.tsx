@@ -1,5 +1,6 @@
 import React from "react"
 import { Meta, StoryFn } from "@storybook/react"
+import { useDarkMode } from "storybook-dark-mode"
 
 // import { Button } from '../../../components/src/button/Button';
 import { Button } from "components"
@@ -33,9 +34,10 @@ export default {
 }
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: StoryFn<typeof Button> = (args: argTypes) => (
-  <Button {...args} />
-)
+const Template: StoryFn<typeof Button> = (args: argTypes) => {
+  console.log(useDarkMode() ? "dark" : "light")
+  return <Button {...args} />
+}
 
 export const Buttons = Template.bind({})
 // // More on args: https://storybook.js.org/docs/react/writing-stories/args
