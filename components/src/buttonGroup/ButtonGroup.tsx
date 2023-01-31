@@ -31,23 +31,37 @@ export const ButtonGroup = ({
   variant,
   onLightBg,
   backgroundColor,
-  label,
   disabled,
   ...props
 }: ButtonProps) => {
-  const base = `font-roboto flex text-[11px] items-center justify-center bg-grey-50 border-r-[1px] p-[4px] border-grey-300 text-center last:border-none last:rounded-r-lg first:bg-primary-light first:rounded-l hover:bg-grey-200 hover:font-semibold`
+  let styles =
+    "font-roboto flex text-[11px] items-center justify-center text-center "
+  switch (variant) {
+    case "text":
+      styles += `text-primary-main -ml-[1px] bg-transparent border-x-[1px] border-primary-light p-[4px] hover:bg-grey-50 last:rounded-r-lg last:border-r-[0px] first:text-common-black first:hover:bg-primary-main first:hover:border-primary-main first:border-l-[0px] first:bg-primary-light first:rounded-l hover:z-10`
+      break
+    case "contained":
+      styles += `text-common-black -ml-[1px] bg-transparent border-x-[1px] border-primary-dark p-[4px] bg-primary-main hover:bg-primary-dark last:rounded-r-lg last:border-r-[0px] first:text-common-black first:hover:border-primary-dark first:border-l-[0px] first:bg-primary-light first:hover:bg-primary-main first:rounded-l hover:z-10`
+      break
+    case "outlined":
+      styles += `text-primary-main -ml-[1px] bg-transparent border-[1px] border-primary-light p-[4px] border-grey-300 hover:border-primary-main  last:rounded-r-lg first:bg-primary-light first:rounded-l hover:z-10`
+      break
+    case "primary":
+      styles += `bg-grey-50 border-r-[1px] p-[4px] border-grey-300 last:border-none last:rounded-r-lg first:bg-primary-light first:rounded-l hover:bg-grey-200 hover:font-semibold`
+      break
+  }
 
   return (
     <span className="flex">
-      <button className={base}>1D</button>
-      <button className={base}>5D</button>
-      <button className={base}>1M</button>
-      <button className={base}>3M</button>
-      <button className={base}>6M</button>
-      <button className={base}>YTD</button>
-      <button className={base}>1Y</button>
-      <button className={base}>5Y</button>
-      <button className={base}>All</button>
+      <button className={styles}>1D</button>
+      <button className={styles}>5D</button>
+      <button className={styles}>1M</button>
+      <button className={styles}>3M</button>
+      <button className={styles}>6M</button>
+      <button className={styles}>YTD</button>
+      <button className={styles}>1Y</button>
+      <button className={styles}>5Y</button>
+      <button className={styles}>All</button>
     </span>
   )
 }

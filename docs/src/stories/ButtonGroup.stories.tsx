@@ -20,7 +20,7 @@ export default {
   argTypes: {
     backgroundColor: { control: "color" },
     variant: {
-      options: ["primary", "secondary", "tertiary"],
+      options: ["primary", "outlined", "text", "contained"],
       control: { type: "radio" },
     },
     onLightBg: {
@@ -41,7 +41,6 @@ export const Button_Group = Template.bind({})
 // // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Button_Group.args = {
   variant: "primary",
-  label: "BUTTON TEXT",
   onLightBg: true,
   disabled: false,
 }
