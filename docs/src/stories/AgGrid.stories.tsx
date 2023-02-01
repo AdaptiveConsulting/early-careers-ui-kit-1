@@ -13,6 +13,8 @@ const defaultArgs: GridType = {
   filter: false,
   resizable: false,
   sortable: false,
+  pagination: true,
+  perPage: 20,
 }
 
 export default {
@@ -43,6 +45,8 @@ Primary.args = {
   sortable: true,
   resizable: true,
   filter: true,
+  pagination: true,
+  perPage: 20,
 }
 
 // Another story, showing the table’s empty state
@@ -67,6 +71,8 @@ LotsOfData.args = {
   sortable: true,
   resizable: true,
   filter: true,
+  pagination: false,
+  perPage: 20,
 }
 
 // colour style dependent on the value of the car
@@ -114,4 +120,60 @@ CellRendering.args = {
   sortable: true,
   resizable: true,
   filter: true,
+  pagination: false,
+  perPage: 20,
+}
+
+export const ConditionalEditing = Template.bind({})
+
+ConditionalEditing.args = {
+  ...defaultArgs,
+  isDark: true,
+  rowData: [
+    { make: "Toyota", model: "Celica", price: 35000, type: "sedan" },
+    { make: "Nissan", model: "KDH", price: 32000, type: "van" },
+    { make: "KIA", model: "Sorento", price: 72000, type: "jeep" },
+  ],
+  columnDefs: [
+    {
+      field: "make",
+      editable: (e) => {
+        // Only allow editing of "Toyota" and "Nissan" rows
+        return e.data.make === "Toyota" || e.data.make === "Nissan"
+      },
+    },
+    { field: "model" },
+    { field: "price" },
+    { field: "type" },
+  ],
+  sortable: true,
+  resizable: true,
+  filter: true,
+  pagination: false,
+  perPage: 20,
+}
+export const CheckboxSelection = Template.bind({})
+
+CheckboxSelection.args = {
+  ...defaultArgs,
+  isDark: true,
+  rowData: [
+    { make: "Toyota", model: "Celica", price: 35000, type: "sedan" },
+    { make: "Nissan", model: "KDH", price: 32000, type: "van" },
+    { make: "KIA", model: "Sorento", price: 72000, type: "jeep" },
+  ],
+  columnDefs: [
+    {
+      field: "make",
+      checkboxSelection: true,
+    },
+    { field: "model" },
+    { field: "price" },
+    { field: "type" },
+  ],
+  sortable: true,
+  resizable: true,
+  filter: true,
+  pagination: false,
+  perPage: 20,
 }

@@ -1,6 +1,7 @@
 import { AgGridReactProps } from "ag-grid-react"
+import { ButtonHTMLAttributes } from "react"
 
-// structure of the table
+// structure of row
 export type row = {
   make: string
   model: string
@@ -8,7 +9,7 @@ export type row = {
   type?: string
 }
 
-//which controls are available
+//controls available
 export interface GridType {
   isDark?: boolean
   rowData?: Array<row>
@@ -16,4 +17,6 @@ export interface GridType {
   filter?: boolean
   sortable?: boolean
   resizable?: boolean
+  pagination?: boolean
+  perPage?: number
 }

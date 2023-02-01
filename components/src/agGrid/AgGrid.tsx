@@ -12,29 +12,39 @@ export default function AgGrid({
   sortable = false,
   filter = false,
   resizable = false,
+  pagination = false,
+  perPage = 20,
 }: GridType) {
   const defaultColDef = useMemo(
     () => ({
       sortable: sortable,
       filter: filter,
       resizable: resizable,
-      editable: true,
+      pagination: pagination,
+      paginationPageSize: perPage,
       flex: 1,
       minWidth: 100,
     }),
-    [sortable, filter, resizable],
+    [sortable, filter, resizable, pagination, perPage],
   )
 
   return (
-    <div className={"w-[850px] h-[400px]"}>
-      <AgGridReact
-        className={`${isDark ? "ag-theme-alpine-dark" : "ag-theme-alpine"}`}
-        rowData={rowData}
-        columnDefs={columnDefs}
-        defaultColDef={defaultColDef}
-        rowSelection="multiple"
-        animateRows={true}
-      />
+    <div
+      className={`flex h-full w-full ${
+        isDark ? "ag-theme-alpine-dark" : "ag-theme-alpine"
+      }`}
+    >
+      <div className={`w-[900px] h-[600px] p-4`}>
+        <AgGridReact
+          rowData={rowData}
+          columnDefs={columnDefs}
+          defaultColDef={defaultColDef}
+          rowSelection="multiple"
+          animateRows={true}
+          pagination={pagination}
+          paginationPageSize={perPage}
+        />
+      </div>
     </div>
   )
 }
