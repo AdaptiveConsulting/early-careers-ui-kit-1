@@ -26,6 +26,10 @@ export default {
     onLightBg: {
       control: { type: "boolean" },
     },
+    orientation: {
+      options: ["horizontal", "vertical"],
+      control: { type: "radio" },
+    },
     disabled: {
       control: { type: "boolean" },
     },
@@ -42,5 +46,6 @@ export const Button_Group = Template.bind({})
 Button_Group.args = {
   variant: "primary",
   onLightBg: true,
+  orientation: "horizontal",
   disabled: false,
 }
