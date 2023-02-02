@@ -69,8 +69,6 @@ export const ButtonGroup = ({
       break
   }
 
-  const vertical = " rounded-none first:round-t"
-
   return (
     <span
       className={`flex ${
