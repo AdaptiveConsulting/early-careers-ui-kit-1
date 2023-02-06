@@ -3,21 +3,29 @@ import "./Slider.css"
 
 export interface sliderProps {
   size: "small" | "medium"
-  color: "primary" | "secondary"
-  ValueLabelDisplay: "off" | "auto" | "on"
+  color: "slider"
   disabled: true | false
+  step: number
+  min: number
+  max: number
 }
 
-export const Slider = (props: sliderProps) => {
+export const Slider = ({
+  size,
+  color,
+  disabled,
+  step,
+  min,
+  max,
+}: sliderProps) => {
   return (
     <input
       type="range"
-      min="0"
-      max="100"
-      id="myRange"
-      step={1}
-      disabled={false}
-      className="slider"
+      min={min}
+      max={max}
+      step={step}
+      disabled={disabled}
+      className={`default ${color} ${size}`}
     />
   )
 }
