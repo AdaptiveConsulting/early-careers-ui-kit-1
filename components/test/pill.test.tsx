@@ -10,113 +10,102 @@ function toJson(component: renderer.ReactTestRenderer) {
   return result as renderer.ReactTestRendererJSON
 }
 
-test("Status Success Pill DarkMode", () => {
-  const component = renderer.create(<Pill purpose="status" onLightBg={false} isDisabled={false} type="success" text="success" />)
+function testPill(
+  purpose: string,
+  onLightBg: boolean,
+  isDisabled: boolean,
+  text: string,
+  type?: string | undefined,
+) {
+  const component = renderer.create(
+    <Pill
+      purpose={purpose}
+      onLightBg={onLightBg}
+      isDisabled={isDisabled}
+      type={type}
+      text={text}
+    />,
+  )
   const tree = toJson(component)
+  return tree
+}
 
-  expect(tree.props.className).toBe(
-    "rounded-xl px-2 py-1 text-left text-sm font-medium pointer-events-none status-pill-dark outline-success-dark"
+const baseNonPrimary =
+  "rounded-xl px-2 py-1 text-left text-sm font-medium pointer-events-none "
+const baseNonPrimaryDark =
+  "rounded-xl px-2 py-1 text-left text-sm font-medium pointer-events-none status-pill-dark"
+const basePrimary = "rounded-xl px-2 py-1 text-left text-sm font-medium "
+
+test("Status Success Pill DarkMode", () => {
+  const result = testPill("status", false, false, "success", "success")
+  expect(result.props.className).toBe(
+    baseNonPrimaryDark + " outline-success-dark",
   )
 })
 test("Status Success Pill LightMode", () => {
-  const component = renderer.create(<Pill purpose="status" onLightBg={true} isDisabled={false} type="success" text="success" />)
-  const tree = toJson(component)
-
-  expect(tree.props.className).toBe(
-    "rounded-xl px-2 py-1 text-left text-sm font-medium pointer-events-none bg-success-main"
-  )
+  const result = testPill("status", true, false, "success", "success")
+  expect(result.props.className).toBe(baseNonPrimary + "bg-success-main")
 })
 
 test("Status Warning Pill DarkMode", () => {
-  const component = renderer.create(<Pill purpose="status" onLightBg={false} isDisabled={false} type="warning" text="warning" />)
-  const tree = toJson(component)
-
-  expect(tree.props.className).toBe(
-    "rounded-xl px-2 py-1 text-left text-sm font-medium pointer-events-none status-pill-dark outline-warning-dark"
+  const result = testPill("status", false, false, "warning", "warning")
+  expect(result.props.className).toBe(
+    baseNonPrimaryDark + " outline-warning-dark",
   )
 })
 test("Status Warning Pill LightMode", () => {
-  const component = renderer.create(<Pill purpose="status" onLightBg={true} isDisabled={false} type="warning" text="warning" />)
-  const tree = toJson(component)
-
-  expect(tree.props.className).toBe(
-    "rounded-xl px-2 py-1 text-left text-sm font-medium pointer-events-none bg-warning-main"
-  )
+  const result = testPill("status", true, false, "warning", "warning")
+  expect(result.props.className).toBe(baseNonPrimary + "bg-warning-main")
 })
 
 test("Status Buy Pill DarkMode", () => {
-  const component = renderer.create(<Pill purpose="status" onLightBg={false} isDisabled={false} type="buy" text="buy" />)
-  const tree = toJson(component)
-
-  expect(tree.props.className).toBe(
-    "rounded-xl px-2 py-1 text-left text-sm font-medium pointer-events-none status-pill-dark outline-buy-dark"
-  )
+  const result = testPill("status", false, false, "buy", "buy")
+  expect(result.props.className).toBe(baseNonPrimaryDark + " outline-buy-dark")
 })
 test("Status Buy Pill LightMode", () => {
-  const component = renderer.create(<Pill purpose="status" onLightBg={true} isDisabled={false} type="buy" text="buy" />)
-  const tree = toJson(component)
-
-  expect(tree.props.className).toBe(
-    "rounded-xl px-2 py-1 text-left text-sm font-medium pointer-events-none bg-error-light"
-  )
+  const result = testPill("status", true, false, "buy", "buy")
+  expect(result.props.className).toBe(baseNonPrimary + "bg-error-light")
 })
 
 test("Status Sell Pill DarkMode", () => {
-  const component = renderer.create(<Pill purpose="status" onLightBg={false} isDisabled={false} type="sell" text="sell" />)
-  const tree = toJson(component)
-
-  expect(tree.props.className).toBe(
-    "rounded-xl px-2 py-1 text-left text-sm font-medium pointer-events-none status-pill-dark outline-sell-dark"
-  )
+  const result = testPill("status", false, false, "sell", "sell")
+  expect(result.props.className).toBe(baseNonPrimaryDark + " outline-sell-dark")
 })
 test("Status Sell Pill LightMode", () => {
-  const component = renderer.create(<Pill purpose="status" onLightBg={true} isDisabled={false} type="sell" text="sell" />)
-  const tree = toJson(component)
+  const result = testPill("status", true, false, "sell", "sell")
+  expect(result.props.className).toBe(baseNonPrimary + "bg-secondary-light")
+})
 
-  expect(tree.props.className).toBe(
-    "rounded-xl px-2 py-1 text-left text-sm font-medium pointer-events-none bg-secondary-light"
+test("Status Primary Pill DarkMode", () => {
+  const result = testPill("primary", false, false, "button")
+  expect(result.props.className).toBe(
+    basePrimary + "bg-transparent ticker-pill",
+  )
+})
+test("Status Primary Pill DarkMode Disabled", () => {
+  const result = testPill("primary", false, true, "button")
+  expect(result.props.className).toBe(
+    basePrimary + "primary-pill bg-transparent",
   )
 })
 
 test("Status Primary Pill LightMode", () => {
-  const component = renderer.create(<Pill purpose="primary" onLightBg={true} isDisabled={false} text="button" />)
-  const tree = toJson(component)
-
-  expect(tree.props.className).toBe(
-    "rounded-xl px-2 py-1 text-left text-sm font-medium bg-primary-main hover:bg-primary-light hover:outline-none hover:border-none "
+  const result = testPill("primary", true, false, "button")
+  expect(result.props.className).toBe(
+    basePrimary +
+      "bg-primary-main hover:bg-primary-light hover:outline-none hover:border-none ",
   )
 })
-test("Status Primary Pill LightMode disabled", () => {
-  const component = renderer.create(<Pill purpose="primary" onLightBg={true} isDisabled={true} text="button" />)
-  const tree = toJson(component)
-
-  expect(tree.props.className).toBe(
-    "rounded-xl px-2 py-1 text-left text-sm font-medium primary-pill bg-primary-light"
-  )
-})
-
-test("Status Primary Pill DarkMode", () => {
-  const component = renderer.create(<Pill purpose="primary" onLightBg={false} isDisabled={false} text="button" />)
-  const tree = toJson(component)
-
-  expect(tree.props.className).toBe(
-    "rounded-xl px-2 py-1 text-left text-sm font-medium bg-transparent ticker-pill"
-  )
-})
-test("Status Primary Pill DarkMode disabled", () => {
-  const component = renderer.create(<Pill purpose="primary" onLightBg={false} isDisabled={true} text="button" />)
-  const tree = toJson(component)
-
-  expect(tree.props.className).toBe(
-    "rounded-xl px-2 py-1 text-left text-sm font-medium primary-pill bg-transparent"
+test("Status Primary Pill LightMode Disabled", () => {
+  const result = testPill("primary", true, true, "button")
+  expect(result.props.className).toBe(
+    basePrimary + "primary-pill bg-primary-light",
   )
 })
 
 test("Status Ticker Pill", () => {
-  const component = renderer.create(<Pill purpose="ticker" onLightBg={false} isDisabled={true} text="googl" />)
-  const tree = toJson(component)
-
-  expect(tree.props.className).toBe(
-    "w-16 bg-transparent rounded-xl px-2 py-1 text-sm font-medium ticker-pill"
+  const result = testPill("ticker", false, true, "googl")
+  expect(result.props.className).toBe(
+    "w-16 bg-transparent rounded-xl px-2 py-1 text-sm font-medium ticker-pill",
   )
 })

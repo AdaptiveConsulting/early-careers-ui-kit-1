@@ -18,7 +18,7 @@
     "storybook": "yarn workspace docs run storybook",
     "lint": "eslint .",
     "lint:fix": "eslint --fix",
-    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}'",
+    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json,cjs}'",
     "format:check": "yarn run format -- --check",
     "verify": "yarn lint && yarn format:check && yarn test",
     "storybook:build": "yarn workspace docs storybook:build"
@@ -27,4 +27,3 @@
     "node": ">=16"
   }
 }
-
