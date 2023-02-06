@@ -18,32 +18,13 @@ const meta: Meta = {
       options: ["primary", "secondary"],
       defaultValue: "primary",
     },
-    orientation: {
-      name: "Orientation",
-      control: { type: "radio" },
-      options: ["horizontal", "vertical"],
-      defaultValue: "horizontal",
-    },
-    valueLabelDisplay: {
-      name: "Value Label Display",
-      control: { type: "radio" },
-      options: ["off", "auto", "on"],
-      defaultValue: "off",
-    },
+
     disabled: {
       name: "Disabled",
       control: "boolean",
       defaultValue: false,
     },
-    track: {
-      name: "Track",
-      control: "radio",
-      options: ["normal", "inverted", false],
-      mapping: {
-        false: false,
-      },
-      defaultValue: "normal",
-    },
+
     min: {
       name: "Min. Value",
 
@@ -59,12 +40,6 @@ const meta: Meta = {
       name: "Step",
       control: { type: "number" },
       defaultValue: 1,
-    },
-    onChange: {
-      action: true,
-    },
-    onChangeCommitted: {
-      action: true,
     },
   },
 }

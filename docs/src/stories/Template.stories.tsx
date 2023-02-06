@@ -22,9 +22,3 @@ export const Primary = Template.bind({})
 // Primary.args = {
 //     label: 'BUTTON TEXT',
 // };
-
-export const Primary = Template.bind({})
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-// Primary.args = {
-//     label: 'BUTTON TEXT',
-// };
