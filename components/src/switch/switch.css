@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.primary {
+  @apply checked:bg-primary-light checked:after:bg-primary-main checked:after:ring-primary-light/[.20];
+}
+.secondary {
+  @apply checked:bg-secondary-light checked:after:bg-secondary-main checked:after:ring-secondary-light/[.20];
+}
+.error {
+  @apply checked:bg-error-light checked:after:bg-error-main checked:after:ring-error-light/[.20];
+}
+.success {
+  @apply checked:bg-success-light checked:after:bg-success-main checked:after:ring-success-light/[.20];
+}
+.warning {
+  @apply checked:bg-warning-light checked:after:bg-warning-main checked:after:ring-warning-light/[.20];
+}
+
+/* Dark Mode */
+.primary-dark {
+  @apply checked:bg-primary-main checked:after:bg-primary-light checked:after:ring-primary-main/[.20];
+}
+.secondary-dark {
+  @apply checked:bg-secondary-main checked:after:bg-secondary-light checked:after:ring-secondary-light/[.20];
+}
+.error-dark {
+  @apply checked:bg-error-main checked:after:bg-error-light checked:after:ring-error-main/[.20];
+}
+.success-dark {
+  @apply checked:bg-success-main checked:after:bg-success-light checked:after:ring-success-main/[.20];
+}
+.warning-dark {
+  @apply checked:bg-warning-main checked:after:bg-warning-light checked:after:ring-warning-main/[.20];
+}
