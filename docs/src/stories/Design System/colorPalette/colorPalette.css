@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .title {
+    /* text -> font-size */
+    /* leading -> line-height */
+    @apply font-merriweather text-[16px] leading-[20.11px];
+  }
+  .body {
+    /* font-normal -> font-weight: 400 */
+    @apply font-roboto font-normal text-[12px] leading-[14.06px];
+  }
+  .footerIconsDescription {
+    @apply font-roboto italic font-light text-[11px] leading-[13px] text-grey-300;
+  }
+
+  .purpose-title {
+    @apply mt-[28px];
+  }
+  .purpose-body {
+    /* @apply h-[70px] w-[911.02px] mt-[12px] mb-[28px] justify-between flex flex-col; */
+    @apply mt-[12px] mb-[21px] justify-between flex flex-col;
+  }
+
+  /* CONTAINERS */
+  .purpose-container {
+    @apply w-[911.02px];
+  }
+  .color-group-description-container {
+    @apply w-[187px];
+  }
+  .footer-text-container {
+    @apply w-[622.99px];
+  }
+  .footer-icons-description-container {
+    @apply w-[172.01px];
+  }
+  .footer-icons-container {
+    @apply flex flex-row;
+  }
+  .swatch-name-style {
+    /* font-bold -> font-weight: 700 */
+    /* px -> padding-left + padding-right */
+    /* pt -> padding-top */
+    @apply font-merriweather font-bold text-[13px] leading-[16.34px] px-[12px] pt-[12px];
+  }
+  .color-swatch-spacing {
+    /* pb -> padding-bottom */
+    @apply pt-[2px] pb-[12px] px-[12px];
+  }
+
+  .swatches-line {
+    /* @apply overflow-x-scroll flex flex-row; */
+    @apply flex flex-row;
+  }
+  .swatch-block {
+    /* text-center -> text-align: center */
+    /* items-start -> align-items: flex-start */
+    /* flex-col -> flex-direction: column */
+    @apply h-[58px] w-[160px] min-w-[160px] text-center items-start flex flex-col;
+  }
+  .first-swatch-block {
+    /* rounded-l -> border-radius on left corners */
+    @apply rounded-l-[5px];
+    /* on resize: @apply rounded-t-[5px]; */
+  }
+  .last-swatch-block {
+    /* rounded-r-lg -> border radius on right corners */
+    @apply rounded-r-[5px];
+    /* on resize: @apply rounded-b-[5px]; */
+  }
+
+  .icon-block {
+    @apply h-[24px] w-[24px] ml-[8px] mb-[16px] flex items-center justify-center;
+  }
+}
