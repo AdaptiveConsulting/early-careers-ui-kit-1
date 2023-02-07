@@ -5,7 +5,7 @@ interface PillType {
   // Is the pill a Primary or Status Pill
   purpose: string
   // Is the type of the pill a Success, Warning, Buy or Sell Pill -- Only for Status Pills
-  onLightBg: boolean
+  isDarkTheme: boolean
   isDisabled: boolean
   type?: string
   text: string
@@ -13,7 +13,7 @@ interface PillType {
 
 export const Pill = ({
   purpose,
-  onLightBg,
+  isDarkTheme,
   isDisabled,
   type,
   text,
@@ -24,19 +24,19 @@ export const Pill = ({
   function typeFilter() {
     switch (type) {
       case "success":
-        return (style += onLightBg
+        return (style += !isDarkTheme
           ? "bg-success-main"
           : "status-pill-dark outline-success-dark")
       case "warning":
-        return (style += onLightBg
+        return (style += !isDarkTheme
           ? "bg-warning-main"
           : "status-pill-dark outline-warning-dark")
       case "buy":
-        return (style += onLightBg
+        return (style += !isDarkTheme
           ? "bg-error-light"
           : "status-pill-dark outline-buy-dark")
       case "sell":
-        return (style += onLightBg
+        return (style += !isDarkTheme
           ? "bg-secondary-light"
           : "status-pill-dark outline-sell-dark")
     }
@@ -49,14 +49,14 @@ export const Pill = ({
   } else if (purpose === "primary") {
     style = "rounded-xl px-2 py-1 text-left text-sm font-medium "
     if (!isDisabled) {
-      style += onLightBg
+      style += isDarkTheme
         ? "bg-primary-main hover:bg-primary-light hover:outline-none hover:border-none "
         : "bg-transparent ticker-pill"
     }
-    if (isDisabled && onLightBg) {
+    if (isDisabled && isDarkTheme) {
       style += "primary-pill bg-primary-light"
     }
-    if (isDisabled && !onLightBg) {
+    if (isDisabled && !isDarkTheme) {
       style += "primary-pill bg-transparent"
     }
   } else if (purpose === "ticker") {

@@ -3,6 +3,7 @@ import { Meta, StoryFn, ArgTypes } from "@storybook/react"
 
 import { Pill } from "components"
 import "components/dist/style.css"
+import { useDarkMode } from "storybook-dark-mode"
 
 export default {
   title: "Components/Pill",
@@ -25,7 +26,7 @@ export default {
   },
 } as Meta<typeof Pill>
 
-const Template: StoryFn<typeof Pill> = (args: ArgTypes) => <Pill {...args} />
+const Template: StoryFn<typeof Pill> = (args: ArgTypes) => <Pill {...{ ...args, isDarkTheme: useDarkMode() }} />
 
 export const Pills = Template.bind({})
 
