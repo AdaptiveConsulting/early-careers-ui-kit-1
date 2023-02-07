@@ -12,7 +12,7 @@ function toJson(component: renderer.ReactTestRenderer) {
 
 function testPill(
   purpose: string,
-  onLightBg: boolean,
+  isDarkTheme: boolean,
   isDisabled: boolean,
   text: string,
   type?: string | undefined,
@@ -20,7 +20,7 @@ function testPill(
   const component = renderer.create(
     <Pill
       purpose={purpose}
-      onLightBg={onLightBg}
+      isDarkTheme={isDarkTheme}
       isDisabled={isDisabled}
       type={type}
       text={text}
@@ -37,42 +37,42 @@ const baseNonPrimaryDark =
 const basePrimary = "rounded-xl px-2 py-1 text-left text-sm font-medium "
 
 test("Status Success Pill DarkMode", () => {
-  const result = testPill("status", false, false, "success", "success")
+  const result = testPill("status", true, false, "success", "success")
   expect(result.props.className).toBe(
     baseNonPrimaryDark + " outline-success-dark",
   )
 })
 test("Status Success Pill LightMode", () => {
-  const result = testPill("status", true, false, "success", "success")
+  const result = testPill("status", false, false, "success", "success")
   expect(result.props.className).toBe(baseNonPrimary + "bg-success-main")
 })
 
 test("Status Warning Pill DarkMode", () => {
-  const result = testPill("status", false, false, "warning", "warning")
+  const result = testPill("status", true, false, "warning", "warning")
   expect(result.props.className).toBe(
     baseNonPrimaryDark + " outline-warning-dark",
   )
 })
 test("Status Warning Pill LightMode", () => {
-  const result = testPill("status", true, false, "warning", "warning")
+  const result = testPill("status", false, false, "warning", "warning")
   expect(result.props.className).toBe(baseNonPrimary + "bg-warning-main")
 })
 
 test("Status Buy Pill DarkMode", () => {
-  const result = testPill("status", false, false, "buy", "buy")
+  const result = testPill("status", true, false, "buy", "buy")
   expect(result.props.className).toBe(baseNonPrimaryDark + " outline-buy-dark")
 })
 test("Status Buy Pill LightMode", () => {
-  const result = testPill("status", true, false, "buy", "buy")
+  const result = testPill("status", false, false, "buy", "buy")
   expect(result.props.className).toBe(baseNonPrimary + "bg-error-light")
 })
 
 test("Status Sell Pill DarkMode", () => {
-  const result = testPill("status", false, false, "sell", "sell")
+  const result = testPill("status", true, false, "sell", "sell")
   expect(result.props.className).toBe(baseNonPrimaryDark + " outline-sell-dark")
 })
 test("Status Sell Pill LightMode", () => {
-  const result = testPill("status", true, false, "sell", "sell")
+  const result = testPill("status", false, false, "sell", "sell")
   expect(result.props.className).toBe(baseNonPrimary + "bg-secondary-light")
 })
 
@@ -93,7 +93,7 @@ test("Status Primary Pill LightMode", () => {
   const result = testPill("primary", true, false, "button")
   expect(result.props.className).toBe(
     basePrimary +
-      "bg-primary-main hover:bg-primary-light hover:outline-none hover:border-none ",
+    "bg-primary-main hover:bg-primary-light hover:outline-none hover:border-none ",
   )
 })
 test("Status Primary Pill LightMode Disabled", () => {
