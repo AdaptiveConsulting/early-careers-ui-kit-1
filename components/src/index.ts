@@ -1,5 +1,6 @@
 export * from "./templateComponent/TemplateComponent"
 export * from "./button/Button"
+export * from "./pill/Pill"
 export * from "./switch/Switch"
 export * from "./agGrid/AgGridData"
 export * from "./agGrid/AgGridTypes"
