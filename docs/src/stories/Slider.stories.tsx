@@ -1,7 +1,6 @@
 import React from "react"
 import { Slider, sliderProps } from "components/src/Slider/Slider"
 import { Meta } from "@storybook/react"
-import { Template } from "ejs"
 
 const meta: Meta = {
   title: "Components/Slider",
@@ -13,16 +12,17 @@ const meta: Meta = {
       options: ["medium", "small"],
       defaultValue: "medium",
     },
-    // color: {
-    //   name: "Color",
-    //   control: { type: "select" },
-    //   options: ["primary", "secondary"],
-    // },
 
     disabled: {
       name: "Disabled",
       control: "boolean",
       defaultValue: true,
+    },
+    color: {
+      name: "Color",
+      control: { type: "select" },
+      options: ["default", "secondary", "disabled"],
+      defaultValue: "primary",
     },
 
     min: {
@@ -52,8 +52,8 @@ export const Default = (args: sliderProps) => <Slider {...args} />
 
 Default.args = {
   disabled: false,
-  color: "primary",
   size: "medium",
+  color: "default",
   min: 0,
   max: 100,
   step: 1,

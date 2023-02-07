@@ -1,13 +1,12 @@
-import React from "react"
 import "./Slider.css"
 
 export interface sliderProps {
   size: "small" | "medium"
-  color: "slider"
-  disabled: true | false
-  step: number
-  min: number
-  max: number
+  color: "default" | "secondary" | "disabled"
+  disabled?: true | false
+  step?: number
+  min?: number
+  max?: number
 }
 
 export const Slider = ({
