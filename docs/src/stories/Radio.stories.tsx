@@ -13,6 +13,7 @@ export default {
     },
   },
 }
+
 const Template: StoryFn<typeof Radio> = (args: {
   isDisabled?: boolean
   labelText: string
@@ -22,4 +23,3 @@ export const Primary = Template.bind({})
 Primary.args = {
   labelText: "Option 1",
 }
-// /
