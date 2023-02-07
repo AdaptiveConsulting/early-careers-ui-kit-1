@@ -13,10 +13,6 @@ export default {
       control: "radio",
       options: ["status", "primary", "ticker"],
     },
-    onLightBg: {
-      name: "On Light Background",
-      control: "boolean",
-    },
     isDisabled: {
       name: "Is Disabled",
       control: "boolean",
@@ -35,7 +31,6 @@ export const Pills = Template.bind({})
 
 Pills.args = {
   purpose: "status",
-  onLightBg: false,
   isDisabled: false,
   type: "success",
   text: "success",
