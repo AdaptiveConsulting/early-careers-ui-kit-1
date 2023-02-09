@@ -41,9 +41,9 @@ module.exports = {
           a700: "#555555",
         },
         primary: {
-          dark: "#5F618D",
-          main: "#A9ABD1",
-          light: "#DBDDFF",
+          dark: "#4E5789",
+          main: "#818AE0",
+          light: "#BDC2FF",
         },
         secondary: {
           dark: "#005195",
