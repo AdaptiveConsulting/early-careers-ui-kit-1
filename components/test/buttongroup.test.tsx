@@ -1,7 +1,7 @@
 import React from "react"
 import { assert, expect, test } from "vitest"
 import renderer from "react-test-renderer"
-import { Checkbox } from "../src/checkbox/Checkbox"
+import { ButtonGroup } from "../src/buttonGroup/ButtonGroup"
 
 function toJson(component: renderer.ReactTestRenderer) {
   const result = component.toJSON()
@@ -9,3 +9,7 @@ function toJson(component: renderer.ReactTestRenderer) {
   expect(result).not.toBeInstanceOf(Array)
   return result as renderer.ReactTestRendererJSON
 }
+
+test("Primary Button", () => {
+  expect(true).toBe(true)
+})
