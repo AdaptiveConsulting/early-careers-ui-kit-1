@@ -1,7 +1,6 @@
 import React from "react"
 import { Meta, StoryFn } from "@storybook/react"
 
-// import { Button } from '../../../components/src/button/Button';
 import { ButtonGroup } from "components"
 import "components/dist/style.css"
 
@@ -12,11 +11,10 @@ interface argTypes {
   disabled: boolean
 }
 
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: "Components/ButtonGroup",
   component: ButtonGroup,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
+
   argTypes: {
     backgroundColor: { control: "color" },
     variant: {
@@ -36,16 +34,15 @@ export default {
   },
 }
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: StoryFn<typeof ButtonGroup> = (args: argTypes) => (
   <ButtonGroup {...args} />
 )
 
-export const Button_Group = Template.bind({})
-// // More on args: https://storybook.js.org/docs/react/writing-stories/args
-Button_Group.args = {
+export const Default = Template.bind({})
+
+Default.args = {
   variant: "primary",
-  onLightBg: true,
+  content: ["1D", "5D", "1M", "3M", "6M", "YTD", "1Y", "5Y", "All"],
   orientation: "horizontal",
   disabled: false,
 }

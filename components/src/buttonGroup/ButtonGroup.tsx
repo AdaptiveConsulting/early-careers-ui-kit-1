@@ -1,5 +1,6 @@
 import React from "react"
 import "./buttonGroup.css"
+import { Button } from "../button/Button"
 
 interface ButtonProps {
   /**
@@ -7,12 +8,13 @@ interface ButtonProps {
    */
   variant?: string
   /**
-   * on light or on dark background?
-   */
-  onLightBg?: boolean
+   * 
+   *
   /**
    * is button disabled?
    */
+  content?: Array<string | number>
+
   disabled?: boolean
   /**
    * What background color to use
@@ -29,9 +31,9 @@ interface ButtonProps {
  */
 export const ButtonGroup = ({
   variant,
-  onLightBg,
   backgroundColor,
   orientation,
+  content,
   disabled,
   ...props
 }: ButtonProps) => {
@@ -75,15 +77,13 @@ export const ButtonGroup = ({
         orientation === "horizontal" ? "flex-row" : "flex-col"
       }`}
     >
-      <button className={styles}>1D</button>
-      <button className={styles}>5D</button>
-      <button className={styles}>1M</button>
-      <button className={styles}>3M</button>
-      <button className={styles}>6M</button>
-      <button className={styles}>YTD</button>
-      <button className={styles}>1Y</button>
-      <button className={styles}>5Y</button>
-      <button className={styles}>All</button>
+      {content?.map((item, key) => {
+        return (
+          <button key={key} className={styles}>
+            {item}
+          </button>
+        )
+      })}
     </span>
   )
 }
