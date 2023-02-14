@@ -48,8 +48,6 @@ export default meta
 
 export const Default = (args: sliderProps) => <Slider {...args} />
 
-// export const Disabled = Default.bind({})
-
 Default.args = {
   disabled: false,
   size: "medium",
