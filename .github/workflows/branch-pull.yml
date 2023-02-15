@@ -10,8 +10,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-22.04
+    env:
+      NODE_OPTIONS: "--max-old-space-size=4096"
     steps:
-      # Check-out code with GitHub Actions to allow workflow to access our repo
+      # Check-out code to allow workflow to access our repo
       - name: Checkout Code
         uses: actions/checkout@v3
         with:
@@ -29,3 +31,16 @@ jobs:
 
       - name: Playwright Test
         run: yarn e2e:web
+
+      - name: Generate Test Report
+        run: yarn test --reporter junit --outputFile=./test-result/test-report.xml
+        # if: always() means --> always run this step, even if the previous steps fail
+        if: always()
+
+      - name: Test Summary
+        # The "show" option allows you to specify which tests to show in a table, to find the tests that failed or were skipped(in this case).
+        uses: test-summary/action@v2
+        with:
+          paths: "components/test-result/test-report.xml"
+          show: "fail, skip"
+        if: always()
