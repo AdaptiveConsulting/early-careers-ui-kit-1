@@ -27,13 +27,13 @@ jobs:
       NODE_OPTIONS: "--max-old-space-size=4096"
 
     steps:
-      # Check-out code with GitHub Actions to allow workflow to access our repo
+      # Check-out code to allow workflow to access our repo
       - name: Checkout
         uses: actions/checkout@v3
         with:
           # with: fetch-depth:0 means we are getting the last commit
           fetch-depth: 0
-      # Install JS Dependencies. --frozen-lock-file to avoid dependencies changing in CI
+      # --frozen-lock-file to avoid dependencies changing in CI
       # https://github.com/yarnpkg/yarn/issues/4147
       - name: Install JS Dependencies
         run: yarn install --frozen-lock-file
@@ -43,9 +43,6 @@ jobs:
 
       - name: Build
         run: yarn build
-
-      - name: Build Storybook
-        run: yarn storybook:build
 
       - name: Setup Pages
         uses: actions/configure-pages@v2
