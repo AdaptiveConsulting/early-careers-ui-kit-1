@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  content: ["./src/**/*.{ts,tsx}"],
   // https://stackoverflow.com/questions/67289894/jit-tailwindcss-using-variable-in-bg-not-rendering-color
   // https://tailwindcss.com/docs/content-configuration#safelisting-classes
   safelist: [

@@ -10,7 +10,7 @@ export default defineConfig({
   test: {
     /* for example, use global to avoid globals imports (describe, test, expect): */
     globals: true,
-    exclude: [...configDefaults.exclude, "**/e2e/**", "**/tests-examples/**"],
+    exclude: [...configDefaults.exclude, "**/e2e/**"],
   },
   build: {
     lib: {
@@ -20,6 +20,23 @@ export default defineConfig({
       // the proper extensions will be added
       fileName: "components",
     },
+    rollupOptions: {
+      external: ["react", "react-dom"],
+      output: {
+        // Since we publish our ./src folder, there's no point
+        // in bloating sourcemaps with another copy of it.
+        sourcemapExcludeSources: true,
+        // Provide global variables to use in the UMD build
+        // for externalized deps
+        globals: {
+          react: "React",
+          ["react-dom"]: "ReactDOM",
+        },
+      },
+    },
+    sourcemap: true,
+    // Leave minification up to applications.
+    minify: false,
   },
   css: {
     postcss: {
