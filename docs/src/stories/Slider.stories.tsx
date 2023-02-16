@@ -25,12 +25,19 @@ const meta: Meta = {
       defaultValue: "primary",
     },
 
+    orientation: {
+      name: "Orientation",
+      control: { type: "radio" },
+      options: ["horizontal", "vertical"],
+      defaultValue: "horizontal",
+    },
+
     min: {
       name: "Min. Value",
-
       control: { type: "number" },
       defaultValue: 0,
     },
+
     max: {
       name: "Max. Value",
       control: "number",
@@ -52,6 +59,7 @@ Default.args = {
   disabled: false,
   size: "medium",
   color: "default",
+  orientation: "horizontal",
   min: 0,
   max: 100,
   step: 1,
