@@ -9,7 +9,7 @@ interface ButtonProps {
   /**
    * on light or on dark background?
    */
-  onLightBg?: boolean
+  isDarkTheme?: boolean
   /**
    * is button disabled?
    */
@@ -29,30 +29,30 @@ interface ButtonProps {
  */
 export const Button = ({
   variant,
-  onLightBg,
+  isDarkTheme,
   backgroundColor,
   label,
   disabled,
   ...props
 }: ButtonProps) => {
   let [base, hover, active, focus] = ["", "", "", ""]
-  const focusColor = onLightBg
-    ? "focus:ring-warning-main"
-    : "focus:ring-warning-light"
-  const mainColour = onLightBg ? "primary-dark" : "primary-light"
+  const focusColor = isDarkTheme
+    ? "focus:ring-warning-light"
+    : "focus:ring-warning-main"
+  const mainColour = isDarkTheme ? "primary-dark" : "primary-light"
 
   if (disabled) {
     base = `btn-base bg-grey-200 text-grey-500`
   } else if (variant === "secondary") {
-    const baseChanges = onLightBg
-      ? "text-primary-dark outline-primary-dark"
-      : "text-primary-light outline-primary-light"
-    const hoverChanges = onLightBg
-      ? "hover:bg-primary-dark hover:text-common-white"
-      : "hover:bg-primary-light hover:text-gray-800"
-    const activeChanges = onLightBg
-      ? "active:outline-primary-dark active:text-primary-dark"
-      : "active:outline-primary-main active:text-primary-light"
+    const baseChanges = isDarkTheme
+      ? "text-primary-light outline-primary-light"
+      : "text-primary-dark outline-primary-dark"
+    const hoverChanges = isDarkTheme
+      ? "hover:bg-primary-light hover:text-gray-800"
+      : "hover:bg-primary-dark hover:text-common-white"
+    const activeChanges = isDarkTheme
+      ? "active:outline-primary-main active:text-primary-light"
+      : "active:outline-primary-dark active:text-primary-dark"
 
     base = `btn-base btn-secondary ${baseChanges} `
     hover = `hover:outline-none ${hoverChanges} `

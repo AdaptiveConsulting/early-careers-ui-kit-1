@@ -1,6 +1,6 @@
 import React from "react"
 import "./checkbox.css"
-interface CheckboxProps {
+export interface CheckboxProps {
   size?: "small" | "medium"
   checkboxType?: string
   isDisabled?: boolean

@@ -1,7 +1,6 @@
-import { Meta, StoryFn } from "@storybook/react"
-import { Switch, Props } from "components/src"
+import { Meta } from "@storybook/react"
+import { Switch, SwitchProps } from "components"
 import { useDarkMode } from "storybook-dark-mode"
-
 import "components/dist/style.css"
 
 export default {
@@ -22,19 +21,13 @@ export default {
       name: "Disabled",
       control: { type: "boolean" },
     },
-    mode: {
-      name: "Mode",
-      control: { type: null },
-    },
   },
 } as Meta
 
-const Template: StoryFn<typeof Switch> = (args: Props) => (
-  <Switch {...{ ...args, mode: useDarkMode() ? "dark" : "light" }} />
+export const SwitchStory = (args: SwitchProps) => (
+  <Switch {...{ ...args, isDarkTheme: useDarkMode() ? "dark" : "light" }} />
 )
-
-export const Default = Template.bind({})
-
-Default.args = {
+SwitchStory.storyName = "Switch"
+SwitchStory.args = {
   variant: "primary",
 }

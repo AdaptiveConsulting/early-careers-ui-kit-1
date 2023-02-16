@@ -26,11 +26,14 @@ export default {
   },
 } as Meta<typeof Pill>
 
-const Template: StoryFn<typeof Pill> = (args: ArgTypes) => <Pill {...{ ...args, isDarkTheme: useDarkMode() }} />
+const Template: StoryFn<typeof Pill> = (args: ArgTypes) => (
+  <Pill {...{ ...args, isDarkTheme: useDarkMode() }} />
+)
 
-export const Pills = Template.bind({})
+export const PillStory = Template.bind({})
+PillStory.storyName = "Pill"
 
-Pills.args = {
+PillStory.args = {
   purpose: "status",
   isDisabled: false,
   type: "success",
