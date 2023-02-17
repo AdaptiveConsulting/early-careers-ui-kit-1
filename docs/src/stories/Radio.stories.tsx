@@ -1,7 +1,7 @@
-import { StoryFn } from "@storybook/react"
+import { Meta } from "@storybook/react"
 import { Radio } from "components"
-import "components/dist/style.css"
 import { useDarkMode } from "storybook-dark-mode"
+import "components/dist/style.css"
 
 export default {
   title: "Components/Radio",
@@ -12,14 +12,13 @@ export default {
       control: "boolean",
     },
   },
-}
-
-const Template: StoryFn<typeof Radio> = (args: {
+} as Meta
+export const RadioButtonStory = (args: {
   isDisabled?: boolean
   labelText: string
 }) => <Radio {...{ ...args, isDarkTheme: useDarkMode() }} />
 
-export const Primary = Template.bind({})
-Primary.args = {
-  labelText: "Option 1",
+RadioButtonStory.storyName = "Radio"
+RadioButtonStory.args = {
+  labelText: "",
 }

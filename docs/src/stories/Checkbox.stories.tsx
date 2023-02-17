@@ -1,13 +1,13 @@
 import React from "react"
-import { ComponentStory, ComponentMeta } from "@storybook/react"
-
+import { useDarkMode } from "storybook-dark-mode"
 import { Checkbox } from "components"
+import { CheckboxProps } from "components/src"
+import { Meta } from "@storybook/react"
 import "components/dist/style.css"
 
 export default {
   title: "Components/Checkbox",
   component: Checkbox,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     size: {
       name: "Size",
@@ -26,18 +26,11 @@ export default {
       options: ["Primary", "Secondary", "Error", "Success", "Warning"],
       defaultValue: "Primary",
     },
-    isDarkTheme: {
-      name: "Dark Theme",
-      control: "boolean",
-      defaultValue: false,
-    },
   },
-} as ComponentMeta<typeof Checkbox>
+} as Meta
 
-const Template: ComponentStory<typeof Checkbox> = (args) => (
-  <Checkbox {...args} />
+export const CheckboxStory = (args: CheckboxProps) => (
+  <Checkbox {...{ ...args, isDarkTheme: useDarkMode() }} />
 )
-
-export const Primary = Template.bind({})
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-Primary.args = {}
+CheckboxStory.storyName = "Checkbox"
+CheckboxStory.args = {}

@@ -4,13 +4,17 @@ import "./radio.css"
 export interface RadioProps {
   isDisabled?: boolean
   isDarkTheme?: boolean
-  labelText: string
+  labelText: string | number
+  optionId: string
+  optionsName?: string
 }
 
 export const Radio = ({
   isDisabled = false,
-  labelText,
   isDarkTheme,
+  labelText,
+  optionId,
+  optionsName,
 }: RadioProps) => {
   const themeColor = isDarkTheme ? "border-grey-400" : "border-grey-600"
   const disabledColors = isDarkTheme
@@ -21,18 +25,16 @@ export const Radio = ({
     : "text-opacity-white-83 peer-checked:text-opacity-white-95 peer-hover:text-opacity-white-95 peer-disabled:text-white/[.38] peer-disabled:pointer-events-none"
   return (
     <div>
-      <div className="flex items-baseline gap-2">
+      <div className={`flex items-start gap-2 max-w-full break-words`}>
         <input
+          id={optionId}
           type="radio"
-          name="options"
-          id="radio-input"
           disabled={isDisabled ? true : false}
-          className={`peer appearance-none min-w-[16px] min-h-[16px] w-4 h-4 border-2 border-solid ${themeColor} rounded-full bg-clip-content p-0.5 hover:border-primary-main checked:bg-primary-main checked:border-primary-main disabled:pointer-events-none ${disabledColors}`}
+          name={optionsName}
+          className={`peer appearance-none min-w-[16px] min-h-[16px] w-4 h-4 mt-[3.5px] border-2 border-solid ${themeColor} rounded-full bg-clip-content p-0.5 hover:border-primary-main checked:bg-primary-main checked:border-primary-main disabled:pointer-events-none ${disabledColors}`}
         />
-        <label
-          htmlFor="radio-input"
-          className={`${buttonTheme} max-w-fill break-words`}
-        >
+        {/* </div> */}
+        <label htmlFor={optionId} className={`${buttonTheme} max-w-full`}>
           {labelText}
         </label>
       </div>
