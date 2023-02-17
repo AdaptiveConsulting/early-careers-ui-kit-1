@@ -26,7 +26,6 @@ export const Radio = ({
   return (
     <div>
       <div className={`flex items-start gap-2 max-w-full break-words`}>
-        {/* <div className=" flex flex-row pt-[3px]"> */}
         <input
           id={optionId}
           type="radio"
