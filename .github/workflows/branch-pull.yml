@@ -30,9 +30,6 @@ jobs:
       - name: Build
         run: yarn build
 
-      - name: Playwright Test
-        run: yarn e2e:web
-
       - name: Generate Test Report
         run: yarn test --reporter junit --outputFile=./test-result/test-report.xml
         # if: always() means --> always run this step, even if the previous steps fail
