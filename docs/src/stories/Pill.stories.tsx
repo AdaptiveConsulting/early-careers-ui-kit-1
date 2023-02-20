@@ -1,8 +1,5 @@
-import React from "react"
 import { Meta, StoryFn, ArgTypes } from "@storybook/react"
-
 import { Pill } from "components"
-import "components/dist/style.css"
 import { useDarkMode } from "storybook-dark-mode"
 
 export default {

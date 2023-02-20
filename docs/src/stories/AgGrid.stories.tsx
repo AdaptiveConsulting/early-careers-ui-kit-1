@@ -1,5 +1,5 @@
-import { AgGrid } from "components/src"
-import { GridType, fooData } from "components/src/"
+import { AgGrid } from "components"
+import { GridType, fooData } from "components"
 import { StoryFn, Meta } from "@storybook/react"
 import Car from "components/src/assets/sedan.png"
 import Jeep from "components/src/assets/jeep.png"

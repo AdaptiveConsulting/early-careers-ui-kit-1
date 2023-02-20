@@ -1,7 +1,6 @@
 import { Meta } from "@storybook/react"
 import { Radio } from "components"
 import { useDarkMode } from "storybook-dark-mode"
-import "components/dist/style.css"
 
 export default {
   title: "Components/Radio",

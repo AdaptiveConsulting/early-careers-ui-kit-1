@@ -1,9 +1,7 @@
-import React from "react"
 import { useDarkMode } from "storybook-dark-mode"
 import { Checkbox } from "components"
-import { CheckboxProps } from "components/src"
+import { CheckboxProps } from "components"
 import { Meta } from "@storybook/react"
-import "components/dist/style.css"
 
 export default {
   title: "Components/Checkbox",
