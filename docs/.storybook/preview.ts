@@ -1,5 +1,10 @@
 import { themes } from "@storybook/theming"
 
+if (process.env.NODE_ENV === "production") {
+  //@ts-ignore
+  import("../../components/dist/style.css")
+}
+
 export const parameters = {
   darkMode: {
     darkClass: "lights-out",
