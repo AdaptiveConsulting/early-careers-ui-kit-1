@@ -2,8 +2,14 @@
   "name": "components",
   "private": true,
   "version": "0.0.1",
-  "main": "dist/components.js",
+  "main": "dist/components.umd.js",
+  "module": "src/index.ts",
+  "types": "src/index.ts",
   "type": "module",
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
     "test": "yarn vitest run",
     "e2e:web": "yarn playwright test",
