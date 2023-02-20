@@ -1,8 +1,6 @@
-import React from "react"
 import { Meta } from "@storybook/react"
 import { useDarkMode } from "storybook-dark-mode"
 import { Button } from "components"
-import "components/dist/style.css"
 
 interface argTypes {
   backgroundColor: string
