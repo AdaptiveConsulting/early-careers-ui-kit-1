@@ -24,7 +24,12 @@ export default {
 } as Meta<typeof Pill>
 
 const Template: StoryFn<typeof Pill> = (args: ArgTypes) => (
-  <Pill {...{ ...args, isDarkTheme: useDarkMode() }} />
+  <Pill
+    {...{
+      ...args,
+      isDarkTheme: useDarkMode(),
+    }}
+  />
 )
 
 export const PillStory = Template.bind({})
