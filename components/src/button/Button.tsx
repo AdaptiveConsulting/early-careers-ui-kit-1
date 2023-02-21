@@ -21,7 +21,7 @@ interface ButtonProps {
   /**
    * Button contents
    */
-  label: string
+  label?: string
 }
 
 /**

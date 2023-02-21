@@ -1,4 +1,4 @@
-import { Meta, StoryFn, ArgTypes } from "@storybook/react"
+import { Meta, StoryFn } from "@storybook/react"
 import { Pill } from "components"
 import { useDarkMode } from "storybook-dark-mode"
 
@@ -23,7 +23,7 @@ export default {
   },
 } as Meta<typeof Pill>
 
-const Template: StoryFn<typeof Pill> = (args: ArgTypes) => (
+const Template: StoryFn<typeof Pill> = (args) => (
   <Pill
     {...{
       ...args,
