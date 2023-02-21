@@ -4,7 +4,7 @@
 
 .default {
   appearance: none;
-  width: 50%;
+  width: 100%;
   height: 5px;
   background: #a9abd1;
   outline: none;
@@ -24,6 +24,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
   background: #a9abd1;
   cursor: pointer;
   border-radius: 50%;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.75);
 }
 
 .disabled {
@@ -44,10 +45,11 @@ input[type="range"]::-webkit-slider-thumb:hover {
   background: #bbbbbb;
   cursor: pointer;
   border-radius: 50%;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.75);
 }
 .secondary {
   appearance: none;
-  background: red;
+  background: #2d96ff;
   outline: none;
   opacity: 0.7;
   transition: opacity 0.2s;
@@ -58,9 +60,10 @@ input[type="range"]::-webkit-slider-thumb:hover {
   appearance: none;
   width: 1.5rem;
   height: 1.5rem;
-  background: red;
+  background: #2d96ffed;
   cursor: pointer;
   border-radius: 50%;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.75);
 }
 
 .small {
@@ -78,4 +81,5 @@ input[type="range"]::-webkit-slider-thumb:hover {
   height: 0.75rem;
   cursor: pointer;
   border-radius: 50%;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.75);
 }
