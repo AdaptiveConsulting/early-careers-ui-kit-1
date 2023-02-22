@@ -1,5 +1,5 @@
 import "./Slider.css"
-import { useState } from "react"
+import { useState, useRef } from "react"
 export interface sliderProps {
   size: "small" | "medium"
   color: "default" | "secondary" | "disabled"
@@ -19,17 +19,22 @@ export const Slider = ({
   min,
   max,
 }: sliderProps) => {
-  const [value, setValue] = useState<number>(min || 0)
-  const [position, setPosition] = useState<number>(0)
+  const [value, setValue] = useState<number>(0)
 
+  const rangeRef = useRef(null)
+  const position = ((value - min) / (max - min)) * 100
+
+  const [width, setWidth] = useState<number>(0)
   const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(parseInt(event.target.value))
-    setPosition((event.target.valueAsNumber / (max || 1)) * 100)
+    setWidth(
+      Math.floor((rangeRef.current?.offsetWidth / window.innerWidth) * 100),
+    )
+    setValue(event.target.valueAsNumber)
   }
   return (
-    <section className="pt-12">
+    <section className="relative">
       <div
-        className={`flex ${
+        className={`w-[100vw] flex ${
           orientation === "vertical" ? "flex-col" : "flex-row "
         }`}
       >
@@ -39,18 +44,18 @@ export const Slider = ({
           max={max}
           step={step}
           disabled={disabled}
+          ref={rangeRef}
           className={`default ${color} ${size} ${
             orientation === "vertical" ? "transform rotate-90 " : "none"
           }`}
           onChange={handleOnChange}
         />
+
         <span
-          className="absolute top-0 left-0 transform -translate-x-1/2 -translate-y-6"
-          style={{ left: `${position}%` }}
+          className={` absolute top-[30px] bg-black text-white px-2 py-1 rounded shadow`}
+          style={{ left: `${position * (width / 100)}%` }}
         >
-          <span className="bg-black text-white px-2 py-1 rounded shadow p-[-50px]">
-            {value}
-          </span>
+          {Math.floor(value)}
         </span>
       </div>
     </section>
