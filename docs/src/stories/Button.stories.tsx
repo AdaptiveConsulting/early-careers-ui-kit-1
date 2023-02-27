@@ -3,6 +3,7 @@ import { useDarkMode } from "storybook-dark-mode"
 import { Button } from "components"
 
 interface argTypes {
+  label: string
   backgroundColor: string
   variant: string
   isDarkTheme: boolean
