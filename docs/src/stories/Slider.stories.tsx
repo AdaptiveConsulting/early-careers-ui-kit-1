@@ -18,18 +18,17 @@ const meta: Meta = {
       control: "boolean",
       defaultValue: true,
     },
+    valueLabelDisplay: {
+      name: "Value Label Display",
+      control: { type: "radio" },
+      options: ["off", "auto", "on"],
+      defaultValue: "off",
+    },
     color: {
       name: "Color",
       control: { type: "select" },
       options: ["default", "secondary", "disabled"],
       defaultValue: "primary",
-    },
-
-    orientation: {
-      name: "Orientation",
-      control: { type: "radio" },
-      options: ["horizontal", "vertical"],
-      defaultValue: "horizontal",
     },
 
     min: {
@@ -48,6 +47,12 @@ const meta: Meta = {
       control: { type: "number" },
       defaultValue: 1,
     },
+    onChange: {
+      action: true,
+    },
+    onChangeCommitted: {
+      action: true,
+    },
   },
 }
 
@@ -59,7 +64,7 @@ Default.args = {
   disabled: false,
   size: "medium",
   color: "default",
-  orientation: "horizontal",
+  valueLabelDisplay: "off",
   min: 0,
   max: 100,
   step: 1,
