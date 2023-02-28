@@ -24,7 +24,7 @@ export default {
 } as Meta
 
 export const SwitchStory = (args: SwitchProps) => (
-  <Switch {...{ ...args, isDarkTheme: useDarkMode() ? "dark" : "light" }} />
+  <Switch {...args} isDarkTheme={useDarkMode()} />
 )
 SwitchStory.storyName = "Switch"
 SwitchStory.args = {

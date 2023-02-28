@@ -31,7 +31,7 @@ export default {
 } as Meta
 
 export const PillStory = (args: argTypes) => (
-  <Pill {...{ ...args, isDarkTheme: useDarkMode() }} />
+  <Pill {...args} isDarkTheme={useDarkMode()} />
 )
 
 PillStory.storyName = "Pill"

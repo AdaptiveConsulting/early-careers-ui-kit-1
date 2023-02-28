@@ -26,7 +26,7 @@ export default {
 } as Meta
 
 export const ButtonStory = (args: argTypes) => (
-  <Button {...{ ...args, isDarkTheme: useDarkMode() }} />
+  <Button {...args} isDarkTheme={useDarkMode()} />
 )
 ButtonStory.storyName = "Button"
 ButtonStory.args = {
