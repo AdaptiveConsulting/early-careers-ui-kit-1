@@ -12,33 +12,35 @@ function toJson(component: renderer.ReactTestRenderer) {
 
 test("Toggle Switch Primary in light mode", () => {
   const component = renderer.create(
-    <Switch variant="primary" isDarkTheme="light" />,
+    <Switch variant="primary" isDarkTheme={false} />,
   )
   const tree = toJson(component)
+  console.log(tree.children[0].props.className)
   expect(tree.children[0].props.className).toBe(
-    "cursor-pointer w-8 h-3 appearance-none rounded-full bg-grey-400 transition duration-200 relative after:w-5 after:h-5 after:rounded-full after:bg-common-white checked:after:transition checked:after:translate-x-5 after:absolute after:right-4 after:bottom-[-4px] after:transition after:duration-200 after:shadow-lg after:hover:ring-8 after:ring-grey-400/[.20] primary",
+    "cursor-pointer w-8 h-3 appearance-none rounded-full bg-grey-300 transition duration-200 relative after:w-5 after:h-5 after:rounded-full after:bg-common-white checked:after:transition checked:after:translate-x-5 after:absolute after:right-4 after:bottom-[-4px] after:transition after:duration-200 after:shadow-lg after:hover:ring-8 after:ring-grey-400/[.20] primary",
   )
 })
 test("Toggle Switch Primary in dark mode", () => {
   const component = renderer.create(
-    <Switch variant="primary" isDarkTheme="dark" />,
+    <Switch variant="primary" isDarkTheme={true} />,
   )
   const tree = toJson(component)
+  console.log(tree.children[0].props.className)
   expect(tree.children[0].props.className).toContain("primary-dark")
 })
 
 test("Toggle Switch Secondary", () => {
   const component = renderer.create(
-    <Switch variant="secondary" isDarkTheme="light" />,
+    <Switch variant="secondary" isDarkTheme={false} />,
   )
   const tree = toJson(component)
   expect(tree.children[0].props.className).toBe(
-    "cursor-pointer w-8 h-3 appearance-none rounded-full bg-grey-400 transition duration-200 relative after:w-5 after:h-5 after:rounded-full after:bg-common-white checked:after:transition checked:after:translate-x-5 after:absolute after:right-4 after:bottom-[-4px] after:transition after:duration-200 after:shadow-lg after:hover:ring-8 after:ring-grey-400/[.20] secondary",
+    "cursor-pointer w-8 h-3 appearance-none rounded-full bg-grey-300 transition duration-200 relative after:w-5 after:h-5 after:rounded-full after:bg-common-white checked:after:transition checked:after:translate-x-5 after:absolute after:right-4 after:bottom-[-4px] after:transition after:duration-200 after:shadow-lg after:hover:ring-8 after:ring-grey-400/[.20] secondary",
   )
 })
 test("Toggle Switch Secondary in dark mode", () => {
   const component = renderer.create(
-    <Switch variant="secondary" isDarkTheme="dark" />,
+    <Switch variant="secondary" isDarkTheme={true} />,
   )
   const tree = toJson(component)
   expect(tree.children[0].props.className).toContain("secondary-dark")
@@ -46,16 +48,16 @@ test("Toggle Switch Secondary in dark mode", () => {
 
 test("Toggle Switch error", () => {
   const component = renderer.create(
-    <Switch variant="error" isDarkTheme="light" />,
+    <Switch variant="error" isDarkTheme={false} />,
   )
   const tree = toJson(component)
   expect(tree.children[0].props.className).toBe(
-    "cursor-pointer w-8 h-3 appearance-none rounded-full bg-grey-400 transition duration-200 relative after:w-5 after:h-5 after:rounded-full after:bg-common-white checked:after:transition checked:after:translate-x-5 after:absolute after:right-4 after:bottom-[-4px] after:transition after:duration-200 after:shadow-lg after:hover:ring-8 after:ring-grey-400/[.20] error",
+    "cursor-pointer w-8 h-3 appearance-none rounded-full bg-grey-300 transition duration-200 relative after:w-5 after:h-5 after:rounded-full after:bg-common-white checked:after:transition checked:after:translate-x-5 after:absolute after:right-4 after:bottom-[-4px] after:transition after:duration-200 after:shadow-lg after:hover:ring-8 after:ring-grey-400/[.20] error",
   )
 })
 test("Toggle Switch Error in dark mode", () => {
   const component = renderer.create(
-    <Switch variant="error" isDarkTheme="dark" />,
+    <Switch variant="error" isDarkTheme={true} />,
   )
   const tree = toJson(component)
   expect(tree.children[0].props.className).toContain("error-dark")
@@ -63,16 +65,16 @@ test("Toggle Switch Error in dark mode", () => {
 
 test("Toggle Switch success", () => {
   const component = renderer.create(
-    <Switch variant="success" isDarkTheme="light" />,
+    <Switch variant="success" isDarkTheme={false} />,
   )
   const tree = toJson(component)
   expect(tree.children[0].props.className).toBe(
-    "cursor-pointer w-8 h-3 appearance-none rounded-full bg-grey-400 transition duration-200 relative after:w-5 after:h-5 after:rounded-full after:bg-common-white checked:after:transition checked:after:translate-x-5 after:absolute after:right-4 after:bottom-[-4px] after:transition after:duration-200 after:shadow-lg after:hover:ring-8 after:ring-grey-400/[.20] success",
+    "cursor-pointer w-8 h-3 appearance-none rounded-full bg-grey-300 transition duration-200 relative after:w-5 after:h-5 after:rounded-full after:bg-common-white checked:after:transition checked:after:translate-x-5 after:absolute after:right-4 after:bottom-[-4px] after:transition after:duration-200 after:shadow-lg after:hover:ring-8 after:ring-grey-400/[.20] success",
   )
 })
 test("Toggle Switch Success in dark mode", () => {
   const component = renderer.create(
-    <Switch variant="success" isDarkTheme="dark" />,
+    <Switch variant="success" isDarkTheme={true} />,
   )
   const tree = toJson(component)
   expect(tree.children[0].props.className).toContain("success-dark")
@@ -80,16 +82,16 @@ test("Toggle Switch Success in dark mode", () => {
 
 test("Toggle Switch warning", () => {
   const component = renderer.create(
-    <Switch variant="warning" isDarkTheme="light" />,
+    <Switch variant="warning" isDarkTheme={false} />,
   )
   const tree = toJson(component)
   expect(tree.children[0].props.className).toBe(
-    "cursor-pointer w-8 h-3 appearance-none rounded-full bg-grey-400 transition duration-200 relative after:w-5 after:h-5 after:rounded-full after:bg-common-white checked:after:transition checked:after:translate-x-5 after:absolute after:right-4 after:bottom-[-4px] after:transition after:duration-200 after:shadow-lg after:hover:ring-8 after:ring-grey-400/[.20] warning",
+    "cursor-pointer w-8 h-3 appearance-none rounded-full bg-grey-300 transition duration-200 relative after:w-5 after:h-5 after:rounded-full after:bg-common-white checked:after:transition checked:after:translate-x-5 after:absolute after:right-4 after:bottom-[-4px] after:transition after:duration-200 after:shadow-lg after:hover:ring-8 after:ring-grey-400/[.20] warning",
   )
 })
 test("Toggle Switch Warning in dark mode", () => {
   const component = renderer.create(
-    <Switch variant="warning" isDarkTheme="dark" />,
+    <Switch variant="warning" isDarkTheme={true} />,
   )
   const tree = toJson(component)
   expect(tree.children[0].props.className).toContain("warning-dark")
