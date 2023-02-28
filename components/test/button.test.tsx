@@ -1,3 +1,4 @@
+import React from "react"
 import { assert, expect, test } from "vitest"
 import renderer from "react-test-renderer"
 import { Button } from "../src/button/Button"

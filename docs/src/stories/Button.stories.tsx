@@ -7,6 +7,7 @@ interface argTypes {
   variant: string
   isDarkTheme: boolean
   disabled: boolean
+  label: string
 }
 
 export default {
