@@ -6,6 +6,8 @@
 * added in pagination, conditional editing and checkbox selection to ag grid storybook ([ed01a17](https://github.com/AdaptiveConsulting/early-careers-ui-kit-1/commit/ed01a17b1fddaaff81404e770d61a5680d9acd6d))
 * All Pill types have been created with both light and dark mode, including testing. ([3d6722e](https://github.com/AdaptiveConsulting/early-careers-ui-kit-1/commit/3d6722eec3ead8f0a7b68ed8eee88d9b136c2b4f))
 * button base template WIP ([143e8ca](https://github.com/AdaptiveConsulting/early-careers-ui-kit-1/commit/143e8caab648acdb8dde79856ed5be1d008291a5))
+* **changelog:** changelog initial configuration ([4de2ff4](https://github.com/AdaptiveConsulting/early-careers-ui-kit-1/commit/4de2ff4abb17bf7ad883b46f7c9c695a2f8215db))
+* **changelog:** changelog initial test ([8317e98](https://github.com/AdaptiveConsulting/early-careers-ui-kit-1/commit/8317e98f685ef66871f33f02b808881f48f06129))
 * Checkbox component created and added various options created in storybook. ([46b2d9f](https://github.com/AdaptiveConsulting/early-careers-ui-kit-1/commit/46b2d9ffc92a64aff38fc4794612b349abfe2ce5))
 * color palette page ([6909721](https://github.com/AdaptiveConsulting/early-careers-ui-kit-1/commit/6909721ca2199b8aa71dd5447bbba5369c26091b))
 * Deploying docs/storybook to gh-pages. ([f74f4ba](https://github.com/AdaptiveConsulting/early-careers-ui-kit-1/commit/f74f4ba9d6335a1ebf279a2a71c5c0371c9deed8))
