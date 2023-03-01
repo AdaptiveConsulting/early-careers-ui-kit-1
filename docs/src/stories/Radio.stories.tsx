@@ -15,7 +15,7 @@ export default {
 export const RadioButtonStory = (args: {
   isDisabled?: boolean
   labelText: string
-}) => <Radio {...{ ...args, isDarkTheme: useDarkMode() }} />
+}) => <Radio {...args} isDarkTheme={useDarkMode()} />
 
 RadioButtonStory.storyName = "Radio"
 RadioButtonStory.args = {

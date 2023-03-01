@@ -3,6 +3,7 @@ import { useDarkMode } from "storybook-dark-mode"
 import { Button } from "components"
 
 interface argTypes {
+  label: string
   backgroundColor: string
   variant: string
   isDarkTheme: boolean
@@ -25,7 +26,7 @@ export default {
 } as Meta
 
 export const ButtonStory = (args: argTypes) => (
-  <Button {...{ ...args, isDarkTheme: useDarkMode() }} />
+  <Button {...args} isDarkTheme={useDarkMode()} />
 )
 ButtonStory.storyName = "Button"
 ButtonStory.args = {

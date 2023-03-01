@@ -1,7 +1,7 @@
 import React from "react"
 import "./pill.css"
 
-interface PillType {
+export interface PillType {
   // Is the pill a Primary or Status Pill
   purpose: string
   // Is the type of the pill a Success, Warning, Buy or Sell Pill -- Only for Status Pills

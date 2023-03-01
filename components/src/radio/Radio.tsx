@@ -5,7 +5,7 @@ export interface RadioProps {
   isDisabled?: boolean
   isDarkTheme?: boolean
   labelText: string | number
-  optionId: string
+  optionId?: string
   optionsName?: string
 }
 

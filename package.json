@@ -15,12 +15,13 @@
     "e2e:web": "yarn workspace components run e2e:web",
     "dev": "yarn workspace components run dev",
     "build": "yarn workspace components run build && yarn workspace docs build",
+    "typecheck": "yarn workspace components run tsc && yarn workspace docs run tsc",
     "storybook": "yarn workspace docs run storybook",
     "lint": "eslint .",
     "lint:fix": "eslint --fix",
     "format": "prettier --write .",
     "format:check": "yarn run format -- --check",
-    "verify": "yarn lint && yarn format:check && yarn test"
+    "verify": "yarn lint && yarn format:check && yarn test && yarn typecheck"
   },
   "engines": {
     "node": ">=16"

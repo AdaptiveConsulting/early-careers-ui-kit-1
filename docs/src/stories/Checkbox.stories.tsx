@@ -28,7 +28,7 @@ export default {
 } as Meta
 
 export const CheckboxStory = (args: CheckboxProps) => (
-  <Checkbox {...{ ...args, isDarkTheme: useDarkMode() }} />
+  <Checkbox {...args} isDarkTheme={useDarkMode()} />
 )
 CheckboxStory.storyName = "Checkbox"
 CheckboxStory.args = {}
