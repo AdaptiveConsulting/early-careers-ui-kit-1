@@ -16,6 +16,7 @@ module.exports = config({
     { type: "perf", section: "Performance Improvements", hidden: false },
     { type: "test", section: "Maintenance", hidden: false },
     { type: "revert", section: "Reverts", hidden: false },
+    { type: "changelog", section: "Changelog", hidden: true },
     { type: "", section: "Others", hidden: false },
   ],
 })
