@@ -20,7 +20,8 @@
     "lint:fix": "eslint --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "verify": "yarn lint && yarn format:check && yarn test"
+    "verify": "yarn lint && yarn format:check && yarn test",
+    "version": "conventional-changelog -p conventionalcommits -i CHANGELOG.md -s && git add CHANGELOG.md"
   },
   "engines": {
     "node": ">=16"
