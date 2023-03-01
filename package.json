@@ -21,6 +21,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "verify": "yarn lint && yarn format:check && yarn test",
+    "changelog": "conventional-changelog --config ./config.js -i CHANGELOG.md -s -r 0",
     "version": "conventional-changelog -p conventionalcommits -i CHANGELOG.md -s && git add CHANGELOG.md"
   },
   "engines": {
