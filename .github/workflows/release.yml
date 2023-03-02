@@ -2,18 +2,19 @@ name: Release
 
 on:
   push:
-    branches: ["4681-changelog-setup"]
+    branches: ["**"]
     # type: [created]
+  # permissions:
+  #   contents: write
+  #   issues: write
+  #   pull-requests: write
 
 jobs:
   release:
-    permissions:
-      contents: write
-      issues: write
-      pull-requests: write
     runs-on: ubuntu-latest
     steps:
       - env:
         # RELEASE_VERSION: ${{ github.event.release.tag_name }}
         RELEASE_VERSION: 0.0.3
-      - run: echo $RELEASE_VERSION | yarn version
+      - name: Test changelog
+        run: echo $RELEASE_VERSION | yarn version
