@@ -1,3 +1,11 @@
+## [0.0.1](https://github.com/AdaptiveConsulting/early-careers-ui-kit-1/compare/v0.0.0...v0.0.1) (2023-03-02)
+
+
+### Others
+
+* v0.0.0 ([f20616c](https://github.com/AdaptiveConsulting/early-careers-ui-kit-1/commit/f20616cd159b6eca0c1e11be6c53ca5369992f19))
+* v0.0.1 ([27a9e8c](https://github.com/AdaptiveConsulting/early-careers-ui-kit-1/commit/27a9e8c347e674b404acbd2b2effcc81483ab81e))
+
 ## [0.0.0](https://github.com/AdaptiveConsulting/early-careers-ui-kit-1/compare/v0.0.1...v0.0.0) (2023-03-02)
 
 
