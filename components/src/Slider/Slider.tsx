@@ -1,47 +1,51 @@
 import "./Slider.css"
 import { useState, useRef } from "react"
-export interface sliderProps {
+export interface SliderProps {
   size: "small" | "medium"
   color: "default" | "secondary" | "disabled"
   disabled?: true | false
   step?: number
   min: number
   max: number
-  valueLabelDisplay?: "off" | "auto" | "on"
+  valueLabelDisplay?: "on" | "off" | "auto"
+  onSliderChange?: (sliderValue: number) => void
+  onSliderChangeCommited?: (sliderValue: number) => void
 }
 
-export const Slider = ({
-  size,
-  color,
-  disabled,
-  step,
-  min,
-  max,
-  valueLabelDisplay,
-}: sliderProps) => {
+export const Slider: React.FC<SliderProps> = (props: SliderProps) => {
+  const {
+    size,
+    color,
+    disabled,
+    step,
+    min,
+    max,
+    valueLabelDisplay,
+    onSliderChange,
+    onSliderChangeCommited,
+  } = props
   const [value, setValue] = useState<number>(0)
 
   const rangeRef = useRef<HTMLInputElement | null>(null)
   const position = ((value - min) / (max - min)) * 100
   const [active, setActive] = useState(false)
 
-  const handleMouseDown = () => {
-    setActive(true)
-  }
-
-  const handleMouseUp = () => {
-    setActive(false)
-  }
-  console.log(active)
   const auto = active ? "" : "invisible"
 
   const [width, setWidth] = useState<number>(0)
+  if (typeof onSliderChangeCommited === "function" && !active) {
+    onSliderChangeCommited(value)
+  }
   const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const newValue = event.target.valueAsNumber
     if (rangeRef.current !== null) {
       setWidth(
         Math.floor((rangeRef.current?.offsetWidth / window.innerWidth) * 100),
       )
-      setValue(event.target.valueAsNumber)
+      setValue(newValue)
+      if (active && typeof onSliderChange === "function") {
+        onSliderChange(newValue)
+      }
     }
   }
   return (
@@ -55,10 +59,10 @@ export const Slider = ({
           step={step}
           disabled={disabled}
           ref={rangeRef}
-          className={`default ${color} ${size}`}
+          className={`${color} ${size}`}
           onChange={handleOnChange}
-          onMouseDown={handleMouseDown}
-          onMouseUp={handleMouseUp}
+          onMouseDown={() => setActive(true)}
+          onMouseUp={() => setActive(false)}
         />
         <span
           className={` ${

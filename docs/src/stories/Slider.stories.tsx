@@ -1,5 +1,5 @@
 import React from "react"
-import { Slider, sliderProps } from "components/src/Slider/Slider"
+import { Slider, SliderProps } from "components/src/Slider/Slider"
 import { Meta } from "@storybook/react"
 
 const meta: Meta = {
@@ -12,18 +12,6 @@ const meta: Meta = {
       options: ["medium", "small"],
       defaultValue: "medium",
     },
-
-    disabled: {
-      name: "Disabled",
-      control: "boolean",
-      defaultValue: true,
-    },
-    valueLabelDisplay: {
-      name: "Value Label Display",
-      control: { type: "radio" },
-      options: ["off", "auto", "on"],
-      defaultValue: "off",
-    },
     color: {
       name: "Color",
       control: { type: "select" },
@@ -31,6 +19,17 @@ const meta: Meta = {
       defaultValue: "primary",
     },
 
+    disabled: {
+      name: "Disabled",
+      control: "boolean",
+      defaultValue: true,
+    },
+
+    step: {
+      name: "Step",
+      control: { type: "number" },
+      defaultValue: 1,
+    },
     min: {
       name: "Min. Value",
       control: { type: "number" },
@@ -42,30 +41,37 @@ const meta: Meta = {
       control: "number",
       defaultValue: 100,
     },
-    step: {
-      name: "Step",
-      control: { type: "number" },
-      defaultValue: 1,
-    },
-    onChange: {
-      action: true,
-    },
-    onChangeCommitted: {
-      action: true,
+    valueLabelDisplay: {
+      name: "Value Label Display",
+      control: { type: "radio" },
+      options: ["on", "off", "auto"],
+      defaultValue: "off",
     },
   },
 }
 
 export default meta
 
-export const Default = (args: sliderProps) => <Slider {...args} />
+export const Default = (args: SliderProps) => <Slider {...args} />
 
-Default.args = {
-  disabled: false,
+const defaultProps: SliderProps = {
   size: "medium",
   color: "default",
-  valueLabelDisplay: "off",
+  disabled: false,
+  step: 1,
   min: 0,
   max: 100,
-  step: 1,
+  valueLabelDisplay: "off",
+  onSliderChange(myValue) {
+    console.log("Slider Value: ", myValue)
+    return myValue
+  },
+  onSliderChangeCommited(value) {
+    console.log("Commited Value: ", value)
+    return value
+  },
+}
+
+Default.args = {
+  ...defaultProps,
 }
