@@ -3,6 +3,7 @@ name: Release
 on:
   push:
     branches: ["4681-changelog-setup"]
+    type: [created]
 
 jobs:
   release:
@@ -12,12 +13,7 @@ jobs:
       pull-requests: write
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: 16
-      - run: yarn ci
-      - run: yarn run build
-      - run: npx semantic-release
-        env:
-        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - env:
+        # RELEASE_VERSION: ${{ github.event.release.tag_name }}
+        RELEASE_VERSION: 0.0.3
+      - run: echo $RELEASE_VERSION | yarn version
