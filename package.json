@@ -1,6 +1,6 @@
 {
   "name": "@adaptive/early-careers-ui-kit-1",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "repository": "git@github.com:AdaptiveConsulting/early-careers-ui-kit-1.git",
   "author": "Early careers UI Kit team",
   "license": "MIT",
@@ -22,7 +22,7 @@
     "format:check": "prettier --check .",
     "verify": "yarn lint && yarn format:check && yarn test",
     "changelog": "conventional-changelog --config ./config.js -i CHANGELOG.md -s -r 0",
-    "version": "yarn changelog && git add CHANGELOG.md"
+    "version": "yarn changelog"
   },
   "engines": {
     "node": ">=16"
