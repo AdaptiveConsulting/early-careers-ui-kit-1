@@ -1,8 +1,26 @@
+## [0.0.3](https://github.com/AdaptiveConsulting/early-careers-ui-kit-1/compare/v0.0.2...v0.0.3) (2023-03-02)
+
+
+### Features
+
+* **changelog:** release configuration ([1bb6265](https://github.com/AdaptiveConsulting/early-careers-ui-kit-1/commit/1bb6265f8a5a81465bce93ebe8163ce439f433de))
+* **changelog:** release configuration ([9d3d5ee](https://github.com/AdaptiveConsulting/early-careers-ui-kit-1/commit/9d3d5ee3b1bb678606fd27af17f5fce96ae45dfe))
+* **changelog:** release configuration ([2c30d97](https://github.com/AdaptiveConsulting/early-careers-ui-kit-1/commit/2c30d978e0ecfa481bb181e46f00c6fa43c70e6b))
+* **changelog:** release configuration ([ee72c1a](https://github.com/AdaptiveConsulting/early-careers-ui-kit-1/commit/ee72c1a2ae3b16ddf1acb08feef99ce48707e62c))
+* **changelog:** release configuration ([1da4fc5](https://github.com/AdaptiveConsulting/early-careers-ui-kit-1/commit/1da4fc50ffdff9b2922be3131b4e323abbb844f4))
+* **changelog:** version configuration ([b1f183d](https://github.com/AdaptiveConsulting/early-careers-ui-kit-1/commit/b1f183d31a79c1124fe1b1157edc73ea43d3c9e7))
+
+
+### Others
+
+* v0.0.3 ([3ad5da1](https://github.com/AdaptiveConsulting/early-careers-ui-kit-1/commit/3ad5da18854b881359e6be2738d96feb373acbc1))
+
 ## [0.0.2](https://github.com/AdaptiveConsulting/early-careers-ui-kit-1/compare/v0.0.0...v0.0.2) (2023-03-02)
 
 
 ### Others
 
+* v0.0.2 ([e0b53f2](https://github.com/AdaptiveConsulting/early-careers-ui-kit-1/commit/e0b53f2652d4621d08da37606b7eb5012332482e))
 * v0.0.1 ([68f3b7b](https://github.com/AdaptiveConsulting/early-careers-ui-kit-1/commit/68f3b7b9f18d5257d1c9a606ffac72f2c9468c0b))
 * v0.0.0 ([f20616c](https://github.com/AdaptiveConsulting/early-careers-ui-kit-1/commit/f20616cd159b6eca0c1e11be6c53ca5369992f19))
 * v0.0.1 ([27a9e8c](https://github.com/AdaptiveConsulting/early-careers-ui-kit-1/commit/27a9e8c347e674b404acbd2b2effcc81483ab81e))
