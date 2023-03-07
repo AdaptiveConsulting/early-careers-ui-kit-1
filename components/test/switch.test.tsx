@@ -15,7 +15,6 @@ test("Toggle Switch Primary in light mode", () => {
     <Switch variant="primary" isDarkTheme={false} />,
   )
   const tree = toJson(component)
-  console.log(tree.children[0].props.className)
   expect(tree.children[0].props.className).toBe(
     "cursor-pointer w-8 h-3 appearance-none rounded-full bg-grey-300 transition duration-200 relative after:w-5 after:h-5 after:rounded-full after:bg-common-white checked:after:transition checked:after:translate-x-5 after:absolute after:right-4 after:bottom-[-4px] after:transition after:duration-200 after:shadow-lg after:hover:ring-8 after:ring-grey-400/[.20] primary",
   )
@@ -25,7 +24,6 @@ test("Toggle Switch Primary in dark mode", () => {
     <Switch variant="primary" isDarkTheme={true} />,
   )
   const tree = toJson(component)
-  console.log(tree.children[0].props.className)
   expect(tree.children[0].props.className).toContain("primary-dark")
 })
 
