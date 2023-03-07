@@ -1,0 +1,24 @@
+name: Daily test run against deployment
+on:
+  schedule:
+    # Run at 9:45am UTC every day. The first * is for minutes, then hours, then day of the month, then month, then day of the week
+    # Check https://crontab.guru/#45_9_*_*_* for a visual representation of this.
+    - cron: "45 9 * * *"
+
+jobs:
+  e2e:
+    name: End-to-end daily tests agains deployment
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Install
+        run: yarn install --frozen-lock-file
+
+      - name: Run e2e
+        run: yarn e2e:web
