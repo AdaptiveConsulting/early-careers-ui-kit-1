@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .title {
+    /* text -> font-size */
+    /* leading -> line-height */
+    @apply font-merriweather text-[16px] leading-[20.11px];
+  }
+  .body {
+    /* font-normal -> font-weight: 400 */
+    @apply font-roboto font-normal text-[12px] leading-[14.06px];
+  }
+  .subheader-large {
+    @apply font-roboto font-medium text-[16px] leading-[18.75px];
+  }
+  .header-small {
+    @apply font-roboto font-medium text-[20px] leading-[23.44px];
+  }
+  .header-large {
+    @apply font-roboto font-medium text-[24px] leading-[28.13px];
+  }
+  .caption {
+    /* font-light -> font-weight:300 */
+    @apply font-roboto font-light text-[11px] leading-[12.89px] italic;
+  }
+  .do-dont-text {
+    /* font-medium -> font-weight: 500 */
+    @apply font-roboto font-medium text-[20px] leading-[23.44px];
+  }
+
+  .icons-purpose-title {
+    @apply mt-[28px];
+  }
+  .icons-purpose-body {
+    @apply mt-[12px] pb-[84.01px] justify-between flex flex-col;
+  }
+
+  /* CONTAINERS */
+  .section-description-container {
+    @apply w-[187px] mr-[24px];
+  }
+  /* COLOR SECTION */
+  .color-section {
+    @apply mt-[24px] flex flex-row;
+  }
+  .color-examples {
+    @apply flex flex-row;
+  }
+  .color-example-box {
+    @apply h-[58.516px] w-[188px];
+  }
+  /* MULTIPLE ICONS-TEXTS CONTAINER FOR DARK/LIGHT THEME */
+  .color-icon-theming {
+    @apply mx-[8px] flex flex-row justify-between items-start;
+  }
+  /* SINGLE ICON-TEXT CONTAINER FOR A THEME */
+  .icon-color-property {
+    @apply mt-[10px] mb-[4px] flex flex-col items-center;
+  }
+  /* ICON CONTAINER */
+  .color-cog-icon-box {
+    @apply h-[16px] w-[16px] mb-[4px] flex items-center;
+  }
+  /* DESCRIPTION UNDER THE DARK/LIGHT THEME */
+  .color-example-description {
+    @apply w-[188px] mt-[12px] text-center;
+  }
+
+  /* SIZING SECTION */
+  .sizing-section {
+    @apply mt-[24px] flex flex-row;
+  }
+  .sizing-examples-container {
+    @apply flex items-center;
+  }
+  .sizing-examples {
+    @apply w-[249px] flex flex-row items-end justify-between;
+  }
+  .good-sizing {
+    @apply w-[120px] flex flex-row items-end justify-between;
+  }
+  .bad-sizing {
+    @apply w-[105px] flex flex-row items-end justify-between;
+  }
+  /* SINGLE ICON-TEXT CONTAINER FOR A THEME */
+  .icon-size-example {
+    @apply mb-[4px] flex flex-col items-center;
+  }
+  /* ICON CONTAINER */
+  .sizing-alarm-bell-icon-box {
+    @apply mb-[4px] flex items-center justify-center;
+  }
+
+  /* WITH TEXT */
+  .with-text-section {
+    @apply mt-[34px] flex flex-row;
+  }
+  .with-text-examples {
+    @apply flex flex-row;
+  }
+  .do-dont-title-box {
+    @apply h-[36px] w-[65px] flex items-center;
+  }
+  .cog-icon-box {
+    @apply mr-[4px] flex items-center justify-center;
+  }
+  .do-dont-add-icon-box {
+    @apply h-[106px] w-[89px] bg-paper-white flex flex-col justify-evenly;
+  }
+
+  /* ICON LIBRARY SECTION */
+  .icon-library-section {
+    @apply mt-[50px] flex flex-row;
+  }
+  .icon-library-examples {
+    @apply flex flex-row;
+  }
+  .icon-example {
+    @apply flex flex-row items-center;
+  }
+  .icon-box {
+    @apply h-[16px] w-[16px] mr-[10px] flex items-center justify-center;
+  }
+}
