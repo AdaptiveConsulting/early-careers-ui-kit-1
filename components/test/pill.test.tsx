@@ -93,7 +93,7 @@ test("Status Primary Pill LightMode", () => {
   const result = testPill("primary", true, false, "button")
   expect(result.props.className).toBe(
     basePrimary +
-    "bg-primary-main hover:bg-primary-light hover:outline-none hover:border-none ",
+      "bg-primary-main hover:bg-primary-light hover:outline-none hover:border-none ",
   )
 })
 test("Status Primary Pill LightMode Disabled", () => {

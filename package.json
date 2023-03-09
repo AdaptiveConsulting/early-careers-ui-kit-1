@@ -19,8 +19,9 @@
     "storybook": "yarn workspace docs run storybook",
     "lint": "eslint .",
     "lint:fix": "eslint --fix",
-    "format": "prettier --write .",
-    "format:check": "yarn run format -- --check",
+    "_format": "prettier .",
+    "format": "yarn _format --write",
+    "format:check": "yarn _format --check",
     "verify": "yarn lint && yarn format:check && yarn test && yarn typecheck"
   },
   "engines": {
