@@ -170,11 +170,21 @@ export const iconsAndNames = [
 export const iconsGroupsAndNames = [
   {
     iconsName: "arrow",
-    iconsElements: [icons.ArrowUp, icons.ArrowDown, icons.ArrowLeft, icons.ArrowRight],
+    iconsElements: [
+      icons.ArrowUp,
+      icons.ArrowDown,
+      icons.ArrowLeft,
+      icons.ArrowRight,
+    ],
   },
   {
     iconsName: "chevron",
-    iconsElements: [icons.ChevronUp, icons.ChevronDown, icons.ChevronLeft, icons.ChevronRight],
+    iconsElements: [
+      icons.ChevronUp,
+      icons.ChevronDown,
+      icons.ChevronLeft,
+      icons.ChevronRight,
+    ],
   },
   {
     iconsName: "chart(line, candle, bar, more to come)",
