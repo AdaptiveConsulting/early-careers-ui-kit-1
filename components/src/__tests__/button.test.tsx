@@ -1,11 +1,14 @@
-import { assert, expect, test } from "vitest"
-import renderer from "react-test-renderer"
-import { Button } from "../src/button/Button"
-function toJson(component: renderer.ReactTestRenderer) {
+import renderer, {
+  ReactTestRenderer,
+  ReactTestRendererJSON,
+} from "react-test-renderer"
+import { Button } from "../button/Button"
+
+function toJson(component: ReactTestRenderer) {
   const result = component.toJSON()
   expect(result).toBeDefined()
   expect(result).not.toBeInstanceOf(Array)
-  return result as renderer.ReactTestRendererJSON
+  return result as ReactTestRendererJSON
 }
 
 test("Primary Button", () => {

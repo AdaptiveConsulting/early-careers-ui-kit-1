@@ -1,13 +1,14 @@
-import React from "react"
-import { expect, test } from "vitest"
-import renderer from "react-test-renderer"
-import { Pill } from "../src/pill/Pill"
+import renderer, {
+  ReactTestRenderer,
+  ReactTestRendererJSON,
+} from "react-test-renderer"
+import { Pill } from "../pill/Pill"
 
-function toJson(component: renderer.ReactTestRenderer) {
+function toJson(component: ReactTestRenderer) {
   const result = component.toJSON()
   expect(result).toBeDefined()
   expect(result).not.toBeInstanceOf(Array)
-  return result as renderer.ReactTestRendererJSON
+  return result as ReactTestRendererJSON
 }
 
 function testPill(
