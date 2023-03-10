@@ -12,7 +12,7 @@ test("Navigate to Button Story and try different variants", async ({
   await page.goto(
     "https://adaptiveconsulting.github.io/early-careers-ui-kit-1/?path=/docs/design-system-about--docs",
   )
-  await delay(4000) // Wait for Storybook to load
+  await delay(5000) // Wait for Storybook to load
   await page.getByRole("link", { name: "Button" }).click()
   await page.getByLabel("secondary").check()
   await expect(page.getByLabel("secondary")).toBeChecked()

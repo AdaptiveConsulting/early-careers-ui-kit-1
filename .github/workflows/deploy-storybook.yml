@@ -3,7 +3,7 @@ name: Deploy static content to Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["main"]
+    branches: ["main", "e2e-first-test-troubleshooting"]
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -58,9 +58,5 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v1
 
-  e2ePostDeploy:
-    needs: deploy
-    runs-on: ubuntu-latest
-    steps:
-      - name: Run E2E tests
+      - name: E2E tests
         run: yarn e2e:web
