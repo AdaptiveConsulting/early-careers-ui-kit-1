@@ -1,7 +1,11 @@
 {
-  "name": "components",
-  "private": true,
-  "version": "0.0.1",
+  "name": "@adaptive-academy/ui-kit-2023",
+  "private": false,
+  "version": "0.0.2",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AdaptiveConsulting/early-careers-ui-kit-1.git"
+  },
   "main": "dist/components.umd.js",
   "module": "src/index.ts",
   "types": "src/index.ts",

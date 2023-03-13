@@ -1,0 +1,28 @@
+name: Publish package to JFrog
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+        # this will create a .npmrc file
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          registry-url: "https://weareadaptive.jfrog.io/artifactory/api/npm/ecp-npm-local-public/"
+          scope: "@adaptive-academy"
+          always-auth: true
+
+      - run: yarn install --frozen-lock-file
+      - run: yarn build:components
+      - run: yarn publish:components
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.ARTIFACTORY_AUTH }}
