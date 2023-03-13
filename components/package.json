@@ -1,7 +1,14 @@
 {
-  "name": "components",
+  "name": "@adaptive/ecp-components-library-2023",
   "private": true,
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:AdaptiveConsulting/early-careers-ui-kit-1.git"
+  },
+  "publishConfig": {
+    "@adaptive:registry": "https://weareadaptive.jfrog.io/artifactory/api/npm/ecp-npm-virtual/"
+  },
   "main": "dist/components.umd.js",
   "module": "src/index.ts",
   "types": "src/index.ts",

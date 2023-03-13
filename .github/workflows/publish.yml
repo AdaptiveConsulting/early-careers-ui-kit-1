@@ -1,0 +1,28 @@
+name: Publish package to JFrog
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set registry URL
+        run: yarn config set @adaptive:registry https://weareadaptive.jfrog.io/artifactory/api/npm/ecp-npm-virtual/
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build package
+        run: yarn run build
+
+      - name: Publish package to JFrog
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.JFROG_API_KEY}}
+        run: |
+          yarn publish --registry=https://weareadaptive.jfrog.io/artifactory/api/npm/ecp-npm-virtual/
