@@ -12,14 +12,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Set registry URL
+        run: yarn config set @adaptive:registry https://weareadaptive.jfrog.io/artifactory/api/npm/ecp-npm-virtual/
+
       - name: Install dependencies
-        run: npm install
+        run: yarn install
 
       - name: Build package
-        run: npm run build
+        run: yarn run build
 
       - name: Publish package to JFrog
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+          NODE_AUTH_TOKEN: ${{secrets.JFROG_API_KEY}}
         run: |
-          npm publish --registry=https://weareadaptive.jfrog.io/artifactory/api/npm/ecp-npm-virtual/
+          yarn publish --registry=https://weareadaptive.jfrog.io/artifactory/api/npm/ecp-npm-virtual/
