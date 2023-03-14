@@ -51,16 +51,12 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          # Upload entire repository
+          # Upload stroybook build output
           path: "docs/storybook-static"
 
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
 
-  e2ePostDeploy:
-    needs: deploy
-    runs-on: ubuntu-latest
-    steps:
-      - name: Run E2E tests
+      - name: E2E tests
         run: yarn e2e:web
