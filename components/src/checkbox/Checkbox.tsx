@@ -1,4 +1,3 @@
-import React from "react"
 import "./checkbox.css"
 export interface CheckboxProps {
   size?: "small" | "medium"

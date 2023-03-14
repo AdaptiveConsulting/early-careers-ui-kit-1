@@ -3,7 +3,6 @@ import renderer, {
   ReactTestRendererJSON,
 } from "react-test-renderer"
 import { fireEvent, render, screen } from "@testing-library/react"
-import { expect, test, vi } from "vitest"
 import { Radio } from "../radio/Radio"
 
 function toJson(component: ReactTestRenderer) {
