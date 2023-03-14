@@ -1,4 +1,3 @@
-import React from "react"
 import "./pill.css"
 
 export interface PillType {
