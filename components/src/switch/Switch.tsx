@@ -16,7 +16,7 @@ export const Switch = ({
   isDarkTheme,
 }: SwitchProps) => {
   return (
-    <label>
+    <label htmlFor={`toggle-switch`}>
       <input
         defaultChecked={isChecked}
         disabled={isDisabled}
