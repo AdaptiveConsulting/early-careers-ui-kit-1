@@ -1,4 +1,4 @@
-import * as icons from "components"
+import * as icons from "@adaptive-academy/ui-kit-2023"
 import { useDarkMode } from "storybook-dark-mode"
 
 export function getTextColorClass() {

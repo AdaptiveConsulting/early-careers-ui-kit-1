@@ -1,5 +1,5 @@
 import { Meta } from "@storybook/react"
-import { Switch, SwitchProps } from "components"
+import { Switch, SwitchProps } from "@adaptive-academy/ui-kit-2023"
 import { useDarkMode } from "storybook-dark-mode"
 
 export default {

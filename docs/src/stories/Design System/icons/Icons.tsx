@@ -1,5 +1,5 @@
 import "./icons.css"
-import * as icons from "components"
+import * as icons from "@adaptive-academy/ui-kit-2023"
 import {
   purposeText,
   colorText,

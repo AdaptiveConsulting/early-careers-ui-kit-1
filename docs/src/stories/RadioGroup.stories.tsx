@@ -1,6 +1,5 @@
-import { RadioGroup } from "components"
+import { RadioGroup, radioGroupProps } from "@adaptive-academy/ui-kit-2023"
 import { useDarkMode } from "storybook-dark-mode"
-import { radioGroupProps } from "components"
 import { action } from "@storybook/addon-actions"
 
 const testParams = [

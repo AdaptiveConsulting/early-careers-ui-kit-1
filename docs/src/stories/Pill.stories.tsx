@@ -1,5 +1,5 @@
 import { Meta } from "@storybook/react"
-import { Pill } from "components"
+import { Pill } from "@adaptive-academy/ui-kit-2023"
 import { useDarkMode } from "storybook-dark-mode"
 
 interface argTypes {

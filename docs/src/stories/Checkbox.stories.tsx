@@ -1,6 +1,5 @@
 import { useDarkMode } from "storybook-dark-mode"
-import { Checkbox } from "components"
-import { CheckboxProps } from "components"
+import { Checkbox, CheckboxProps } from "@adaptive-academy/ui-kit-2023"
 import { Meta } from "@storybook/react"
 
 export default {
